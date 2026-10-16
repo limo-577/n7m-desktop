@@ -1,0 +1,26 @@
+FFmpeg provides CMake imported targets:
+
+  # Recommended: full umbrella target
+  find_package(FFmpeg REQUIRED)
+  target_link_libraries(main PRIVATE FFmpeg::FFmpeg)
+
+  # Or link individual modules
+  find_package(FFmpeg REQUIRED)
+  target_link_libraries(main PRIVATE
+      FFmpeg::avformat
+      FFmpeg::avcodec
+      FFmpeg::avutil
+  )
+
+  # Legacy variable-based
+  target_include_directories(main PRIVATE ${FFMPEG_INCLUDE_DIRS})
+  target_link_libraries(main PRIVATE ${FFMPEG_LIBRARIES})
+
+Compatibility:
+  Old FFMPEG::ffmpeg / FFMPEG::avformat names are still available
+  as aliases.
+
+For complete CMake integration details, consult the FFmpeg and vcpkg documentation.
+
+Direct download usage:
+  cmake -B build -DFFMPEG_ROOT=<absolute_path_to_ffmpeg_prefix>

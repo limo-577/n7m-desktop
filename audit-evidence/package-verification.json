@@ -1,0 +1,26 @@
+{
+  "verifiedAt": "2026-10-16T17:25:18.920Z",
+  "asarSourceMatches": [
+    "main.js",
+    "preload.js",
+    "renderer/index.html",
+    "renderer/desktop-lyric.html",
+    "renderer/vendor/sprintf.js",
+    "renderer/vendor/src/sprintf.js",
+    "renderer/vendor/package.json",
+    "renderer/vendor/SECURITY-PATCH.md"
+  ],
+  "nativeBinaryMatches": [
+    "avcodec-62.dll",
+    "avfilter-11.dll",
+    "avformat-62.dll",
+    "avutil-60.dll",
+    "ffmpeg.exe",
+    "libmp3lame.dll",
+    "swresample-6.dll"
+  ],
+  "undiciBundled": false,
+  "oldHtml2canvasBundled": false,
+  "buildFetchBundled": false,
+  "sprintfVendorBundled": true
+}

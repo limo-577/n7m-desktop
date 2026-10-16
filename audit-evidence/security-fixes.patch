@@ -1,0 +1,441 @@
+diff --git a/audit-evidence/original/main.js b/main.js
+index 77893de..29ee34e 100644
+--- a/audit-evidence/original/main.js
++++ b/main.js
+@@ -1,4 +1,4 @@
+-const { app, BrowserWindow, Menu, ipcMain, screen, dialog } = require('electron');
++const { app, BrowserWindow, Menu, ipcMain, screen, dialog, session } = require('electron');
+ const path = require('path');
+ const { pathToFileURL } = require('url');
+ const fs = require('fs');
+@@ -14,7 +14,27 @@ const LYRIC_PAGE = pathToFileURL(path.join(__dirname, 'renderer', 'desktop-lyric
+ 
+ function isTrustedSender(event, window, expectedUrl) {
+   return !!window && !window.isDestroyed() && event.sender === window.webContents &&
+-    !!event.senderFrame && event.senderFrame.url === expectedUrl;
++    !!event.senderFrame && event.senderFrame === window.webContents.mainFrame &&
++    event.senderFrame.url === expectedUrl;
++}
++
++// Only the main document needs microphone access; all other capabilities fail closed.
++function isTrustedPermissionRequester(webContents, details) {
++  return !!mainWindow && !mainWindow.isDestroyed() &&
++    webContents === mainWindow.webContents && webContents.getURL() === MAIN_PAGE &&
++    !!details && details.isMainFrame === true && details.requestingUrl === MAIN_PAGE;
++}
++
++function configurePermissions() {
++  session.defaultSession.setPermissionCheckHandler((webContents, permission, origin, details) => {
++    return isTrustedPermissionRequester(webContents, details) &&
++      permission === 'media' && details.mediaType === 'audio';
++  });
++  session.defaultSession.setPermissionRequestHandler((webContents, permission, callback, details) => {
++    const mediaTypes = details && details.mediaTypes;
++    callback(isTrustedPermissionRequester(webContents, details) && permission === 'media' &&
++      Array.isArray(mediaTypes) && mediaTypes.length > 0 && mediaTypes.every(type => type === 'audio'));
++  });
+ }
+ 
+ function rejectUnexpectedNavigation(window, expectedUrl) {
+@@ -135,6 +155,7 @@ function createLyricWindow () {
+ }
+ 
+ app.whenReady().then(() => {
++  configurePermissions();
+   createMainWindow();
+   app.on('activate', () => {
+     if (BrowserWindow.getAllWindows().length === 0) createMainWindow();
+diff --git a/audit-evidence/original/package-lock.json b/package-lock.json
+index ecb9e4a..6c066a9 100644
+--- a/audit-evidence/original/package-lock.json
++++ b/package-lock.json
+@@ -15,7 +15,8 @@
+       "devDependencies": {
+         "electron": "44.5.1",
+         "electron-builder": "26.15.3",
+-        "sprintf-js": "file:renderer/vendor"
++        "sprintf-js": "file:renderer/vendor",
++        "undici": "7.30.1"
+       }
+     },
+     "node_modules/@babel/runtime": {
+@@ -299,6 +300,7 @@
+       "dev": true,
+       "license": "BSD-2-Clause",
+       "optional": true,
++      "peer": true,
+       "dependencies": {
+         "cross-dirname": "^0.1.0",
+         "debug": "^4.3.4",
+@@ -320,6 +322,7 @@
+       "dev": true,
+       "license": "MIT",
+       "optional": true,
++      "peer": true,
+       "dependencies": {
+         "graceful-fs": "^4.2.0",
+         "jsonfile": "^6.0.1",
+@@ -1243,7 +1246,8 @@
+       "integrity": "sha512-+R08/oI0nl3vfPcqftZRpytksBXDzOUveBq/NBVx0sUp1axwzPQrKinNx5yd5sxPu8j1wIy8AfnVQ+5eFdha6Q==",
+       "dev": true,
+       "license": "MIT",
+-      "optional": true
++      "optional": true,
++      "peer": true
+     },
+     "node_modules/cross-spawn": {
+       "version": "7.0.6",
+@@ -1454,7 +1458,6 @@
+       "integrity": "sha512-O3zJUFUYHJKgzPqioHxfxzBzlSC1eXCSr79gMSBKBP5AgjjpmrydMsMLotEg9fAJF36vdUncb+4ndRNxoPdlSQ==",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "dependencies": {
+         "app-builder-lib": "26.15.3",
+         "builder-util": "26.15.3",
+@@ -1658,6 +1661,7 @@
+       "dev": true,
+       "hasInstallScript": true,
+       "license": "MIT",
++      "peer": true,
+       "dependencies": {
+         "@electron/asar": "^3.2.1",
+         "debug": "^4.1.1",
+@@ -1678,6 +1682,7 @@
+       "integrity": "sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==",
+       "dev": true,
+       "license": "MIT",
++      "peer": true,
+       "dependencies": {
+         "graceful-fs": "^4.1.2",
+         "jsonfile": "^4.0.0",
+@@ -1693,6 +1698,7 @@
+       "integrity": "sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==",
+       "dev": true,
+       "license": "MIT",
++      "peer": true,
+       "optionalDependencies": {
+         "graceful-fs": "^4.1.6"
+       }
+@@ -1703,6 +1709,7 @@
+       "integrity": "sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==",
+       "dev": true,
+       "license": "MIT",
++      "peer": true,
+       "engines": {
+         "node": ">= 4.0.0"
+       }
+@@ -2685,6 +2692,7 @@
+       "integrity": "sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==",
+       "dev": true,
+       "license": "MIT",
++      "peer": true,
+       "dependencies": {
+         "minimist": "^1.2.6"
+       },
+@@ -2768,9 +2776,9 @@
+       }
+     },
+     "node_modules/node-gyp/node_modules/undici": {
+-      "version": "6.29.0",
+-      "resolved": "https://registry.npmjs.org/undici/-/undici-6.29.0.tgz",
+-      "integrity": "sha512-R+RODBqp6i2pPflGdq+xIOUkl+RNfGgHwoinecKu/JCuf2uO06cOKoDbI2P7Dn6KcswdKwrczbU6IYJ6K8X+wg==",
++      "version": "6.29.1",
++      "resolved": "https://registry.npmjs.org/undici/-/undici-6.29.1.tgz",
++      "integrity": "sha512-EvRlUt/QqAEvXdQeRMYUfwOQsfzpDztykrG2owGEE/rBOBoYv9uF39ZzsNDh4lTFHhTr2XOZjKkYgueD12ZmGA==",
+       "dev": true,
+       "license": "MIT",
+       "engines": {
+@@ -2947,7 +2955,6 @@
+       "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==",
+       "dev": true,
+       "license": "MIT",
+-      "peer": true,
+       "engines": {
+         "node": ">=12"
+       },
+@@ -3011,6 +3018,7 @@
+       "dev": true,
+       "license": "MIT",
+       "optional": true,
++      "peer": true,
+       "dependencies": {
+         "commander": "^9.4.0"
+       },
+@@ -3028,6 +3036,7 @@
+       "dev": true,
+       "license": "MIT",
+       "optional": true,
++      "peer": true,
+       "engines": {
+         "node": "^12.20.0 || >=14"
+       }
+@@ -3244,6 +3253,7 @@
+       "deprecated": "Rimraf versions prior to v4 are no longer supported",
+       "dev": true,
+       "license": "ISC",
++      "peer": true,
+       "dependencies": {
+         "glob": "^7.1.3"
+       },
+@@ -3513,6 +3523,7 @@
+       "integrity": "sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA==",
+       "dev": true,
+       "license": "MIT",
++      "peer": true,
+       "dependencies": {
+         "mkdirp": "^0.5.1",
+         "rimraf": "~2.6.2"
+@@ -3631,12 +3642,11 @@
+       }
+     },
+     "node_modules/undici": {
+-      "version": "7.30.0",
+-      "resolved": "https://registry.npmjs.org/undici/-/undici-7.30.0.tgz",
+-      "integrity": "sha512-dkrQXeHSaoamnItlYbmzG0wFYrM0ZwDxCIg0A7aKjTyyhh9svRzCNFEzV+Vm05/yehjCzjDZ31KXfGEjYSztDQ==",
++      "version": "7.30.1",
++      "resolved": "https://registry.npmjs.org/undici/-/undici-7.30.1.tgz",
++      "integrity": "sha512-03KrMbjIFDWQR5RNPrSw3bd1r12JpyFQl9/yxjUbJtqkjmllqC5lFjZh6ujeuJCKr8EOQvRW872Oy/az+nLYxg==",
+       "dev": true,
+       "license": "MIT",
+-      "optional": true,
+       "engines": {
+         "node": ">=20.18.1"
+       }
+@@ -3837,7 +3847,7 @@
+     },
+     "renderer/vendor": {
+       "name": "sprintf-js",
+-      "version": "1.1.4",
++      "version": "1.1.3-local.1",
+       "dev": true,
+       "license": "BSD-3-Clause"
+     }
+diff --git a/audit-evidence/original/package.json b/package.json
+index a911557..89e58f1 100644
+--- a/audit-evidence/original/package.json
++++ b/package.json
+@@ -7,19 +7,25 @@
+   "license": "UNLICENSED",
+   "private": true,
+   "scripts": {
++    "test": "node --test tests/security.test.js",
++    "install:electron": "node --require ./scripts/build-fetch.cjs node_modules/electron/install.js",
++    "update:csp": "node scripts/update-csp.js",
+     "prestart": "node scripts/ensure-ffmpeg.js",
+     "start": "electron .",
+     "predist": "node scripts/ensure-ffmpeg.js",
+-    "dist": "electron-builder --win",
++    "dist": "node --require ./scripts/build-fetch.cjs node_modules/electron-builder/cli.js --win",
+     "postdist": "node scripts/write-installer-checksum.js"
+   },
+   "devDependencies": {
+     "electron": "44.5.1",
+     "electron-builder": "26.15.3",
+-    "sprintf-js": "file:renderer/vendor"
++    "sprintf-js": "file:renderer/vendor",
++    "undici": "7.30.1"
+   },
+   "overrides": {
+-    "sprintf-js": "$sprintf-js"
++    "sprintf-js": "$sprintf-js",
++    "undici@^6.0.0": "6.29.1",
++    "undici@^7.0.0": "$undici"
+   },
+   "build": {
+     "appId": "com.singingnotes.desktop",
+diff --git a/audit-evidence/original/README.md b/README.md
+index e255a97..6a20d41 100644
+--- a/audit-evidence/original/README.md
++++ b/README.md
+@@ -26,10 +26,15 @@ singing-notes-desktop/
+    ```
+ 4. 安装依赖（只需要做一次，之后不用重复）：
+    ```
+-   npm install
++   npm ci --ignore-scripts
++   npm run install:electron
+    ```
+    这一步会花几分钟联网下载 Electron 本体，文件比较大（几百 MB），耐心等一下。
+ 
++安全修复版使用上述两步安装：先按锁文件安装依赖并跳过第三方安装脚本，再通过项目专用命令下载 Electron。`install:electron` 和 `dist` 仅在各自 Node 进程中启用已修复的 npm undici 7.30.1，避免使用宿主 Node 内置的旧 fetch；不修改系统 Node、全局 NODE_OPTIONS 或桌面运行时。直接运行 `npm install` / `npm ci`（未带 `--ignore-scripts`）或直接调用依赖 CLI 会绕过这个项目保护流程。未来新增依赖若需要安装脚本，须单独核查后显式运行。
++
++安全回归命令：`npm test`。编辑页面内联脚本后运行 `npm run update:csp` 再测试。最新审核结果见 `SECURITY_REVIEW_20261016.md`，其中列出了尚未决定的同 ID 导入覆盖策略与其他剩余风险。
++
+ 源码仓库不提交生成的 FFmpeg 可执行文件和 DLL。全新检出后，运行 `npm start` 或 `npm run dist` 前，先按对应源码包内的 `README.md` 从 FFmpeg/LAME 源码构建并暂存运行时；暂存脚本会验证组件清单和哈希。当前工作目录已有本地构建产物，直接运行即可。
+ 
+ ## 平时开发调试：直接运行（不用打包也能用）
+diff --git a/audit-evidence/original/renderer/index.html b/renderer/index.html
+index 6c03130..2f84208 100644
+--- a/audit-evidence/original/renderer/index.html
++++ b/renderer/index.html
+@@ -3,7 +3,7 @@
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-p9HC9ydNvzRPk9z53U8jzqs2tdaIAs0RQe0SNKp5gm8=' 'sha256-/b24/moGvkqY0hrtJJv6I7R3EEW7vfHKOEgOffxD3jU=' 'sha256-oOHGBzNnxLYITl9/lqyTVWvjwaoYEU+akpE+350NU7g=' 'sha256-O9fo6oLjzKNCsLMQ4aXqr1HS2tdwmfGQZFbdZTu5n1Q='; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' file: data: blob:; media-src 'self' file: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-src 'none'; form-action 'none'" />
++<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-p9HC9ydNvzRPk9z53U8jzqs2tdaIAs0RQe0SNKp5gm8=' 'sha256-/b24/moGvkqY0hrtJJv6I7R3EEW7vfHKOEgOffxD3jU=' 'sha256-j51Zjnhp0T6M8hAIruXRLpkrS7bPNW93OFu1ov0Wwlk=' 'sha256-O9fo6oLjzKNCsLMQ4aXqr1HS2tdwmfGQZFbdZTu5n1Q='; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' file: data: blob:; media-src 'self' file: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-src 'none'; form-action 'none'" />
+ <title>N7m · 歌词标注 + 播放器</title>
+ <script src="../node_modules/html2canvas-pro/dist/html2canvas-pro.min.js"></script>
+ <script src="../node_modules/jspdf/dist/jspdf.umd.min.js"></script>
+@@ -1150,7 +1150,7 @@ function getAnnDisplay(a){
+ ============================================================ */
+ var state = {
+   songIndex: [],
+-  songsCache: {},
++  songsCache: Object.create(null),
+   currentId: null,
+   settings: { labelMode:'symbol', theme:'light', fontSize:'medium', volume:1 },
+   selection: [],
+@@ -1216,11 +1216,11 @@ function normalizeSong(song){
+   if(!song.lines) song.lines = [];
+   if(!song.annotations) song.annotations = [];
+   song.annotations.forEach(function(a){
+-    if(a && LEGACY_TYPE_MAP[a.type]) a.type = LEGACY_TYPE_MAP[a.type];
++    if(a && Object.hasOwn(LEGACY_TYPE_MAP, a.type)) a.type = LEGACY_TYPE_MAP[a.type];
+   });
+   // 未知/已废弃的类型直接丢弃，绝不能因为一个认不出的标注拖垮整首歌的显示
+-  song.annotations = song.annotations.filter(function(a){ return a && a.type && !!ANNOTATION_DEFS[a.type]; });
+-  var flatSet = {};
++  song.annotations = song.annotations.filter(function(a){ return a && a.type && Object.hasOwn(ANNOTATION_DEFS, a.type); });
++  var flatSet = Object.create(null);
+   song.lines.forEach(function(line){
+     if(line.type==='text') line.chars.forEach(function(c){ flatSet[c.id]=true; });
+   });
+@@ -1233,6 +1233,54 @@ function normalizeSong(song){
+   });
+   return song;
+ }
++
++// Validate the entire backup before touching existing songs or persistent storage.
++// Keep legacy backups without lines/annotations and preserve unrecognized metadata.
++function prepareImportedSongs(data){
++  function record(value){ return value !== null && typeof value === 'object' && !Array.isArray(value); }
++  function invalid(){ throw new Error('备份数据结构无效'); }
++  var songs = record(data) && Object.hasOwn(data, 'songs') ? data.songs : (Array.isArray(data) ? data : [data]);
++  if(!Array.isArray(songs)) invalid();
++  var ids = new Set();
++  return songs.map(function(song){
++    if(!record(song)) invalid();
++    if(song.id != null && typeof song.id !== 'string') invalid();
++    if(song.title != null && typeof song.title !== 'string') invalid();
++    if(song.rawLyrics != null && typeof song.rawLyrics !== 'string') invalid();
++    if(song.updatedAt != null && (typeof song.updatedAt !== 'number' || !Number.isFinite(song.updatedAt))) invalid();
++    if(!song.title) song.title = '导入的歌曲';
++    if(song.rawLyrics == null) song.rawLyrics = '';
++    if(!song.id) song.id = uid('s');
++    if(ids.has(song.id)) invalid();
++    ids.add(song.id);
++    if(song.lines == null) song.lines = parseLyrics(song.rawLyrics || '');
++    if(song.annotations == null) song.annotations = [];
++    if(!Array.isArray(song.lines) || !Array.isArray(song.annotations)) invalid();
++    var lineIds = new Set(), charIds = new Set();
++    song.lines.forEach(function(line){
++      if(!record(line) || typeof line.id !== 'string' || !line.id || lineIds.has(line.id)) invalid();
++      lineIds.add(line.id);
++      if(line.type !== 'text' && line.type !== 'break') invalid();
++      if(line.time != null && (typeof line.time !== 'number' || !Number.isFinite(line.time))) invalid();
++      if(line.type === 'break') return;
++      if(!Array.isArray(line.chars)) invalid();
++      line.chars.forEach(function(ch){
++        if(!record(ch) || typeof ch.id !== 'string' || !ch.id || charIds.has(ch.id) || typeof ch.ch !== 'string') invalid();
++        charIds.add(ch.id);
++      });
++    });
++    song.annotations.forEach(function(a){
++      // Unknown annotations are intentionally discarded by the legacy normalizer.
++      if(a == null) return;
++      if(!record(a) || typeof a.type !== 'string') invalid();
++      if(!Object.hasOwn(ANNOTATION_DEFS, a.type) && !Object.hasOwn(LEGACY_TYPE_MAP, a.type)) return;
++      if(typeof a.id !== 'string' || !Array.isArray(a.charIds) || !a.charIds.every(function(id){ return typeof id === 'string'; })) invalid();
++      if(a.rawText != null && typeof a.rawText !== 'string') invalid();
++      if(a.anchor != null && a.anchor !== 'first' && a.anchor !== 'last') invalid();
++    });
++    return normalizeSong(song);
++  });
++}
+ async function loadSong(id){
+   if(state.songsCache[id]) return state.songsCache[id];
+   var raw = await storageSafeGet('song:'+id);
+@@ -1302,7 +1350,7 @@ function linesToRawText(song){
+   }).join('\n');
+ }
+ function findCharText(song, ids){
+-  var map = {};
++  var map = Object.create(null);
+   song.lines.forEach(function(line){ if(line.type==='text') line.chars.forEach(function(c){ map[c.id]=c.ch; }); });
+   var flat = flattenChars(song);
+   var sorted = ids.slice().sort(function(a,b){ return flat.indexOf(a)-flat.indexOf(b); });
+@@ -1540,7 +1588,7 @@ function buildLinesFromLRC(entries){
+   });
+ }
+ function pruneOrphanAnnotations(song){
+-  var flatSet = {};
++  var flatSet = Object.create(null);
+   flattenChars(song).forEach(function(id){ flatSet[id]=true; });
+   song.annotations = (song.annotations||[]).filter(function(a){
+     return a.charIds.every(function(id){ return flatSet[id]; });
+@@ -2340,7 +2388,7 @@ function renderLyrics(song){
+     var strip = document.createElement('div');
+     strip.className = 'notes-strip';
+     var lineCharIds = line.chars.map(function(c){return c.id;});
+-    var seen = {};
++    var seen = Object.create(null);
+     (song.annotations||[]).forEach(function(a){
+       if(a.position==='below' && a.charIds.some(function(id){return lineCharIds.indexOf(id)!==-1;}) && !seen[a.id]){
+         seen[a.id]=true;
+@@ -2505,7 +2553,7 @@ function bindLyricsInput(){
+       if(newText === song.rawLyrics) return;
+       song.rawLyrics = newText;
+       song.lines = parseLyrics(newText);
+-      var flatSet = {};
++      var flatSet = Object.create(null);
+       flattenChars(song).forEach(function(id){ flatSet[id]=true; });
+       song.annotations = (song.annotations||[]).filter(function(a){
+         return a.charIds.every(function(id){ return flatSet[id]; });
+@@ -2807,14 +2855,10 @@ function bindSidebar(){
+     reader.onload = async function(){
+       try{
+         var data = JSON.parse(reader.result);
+-        var songs = data.songs || (Array.isArray(data) ? data : [data]);
++        var songs = prepareImportedSongs(data);
+         var lastId = null;
+         for(var i=0;i<songs.length;i++){
+           var s = songs[i];
+-          if(!s.id) s.id = uid('s');
+-          if(!s.lines) s.lines = parseLyrics(s.rawLyrics||'');
+-          if(!s.annotations) s.annotations = [];
+-          s = normalizeSong(s);
+           state.songsCache[s.id] = s;
+           if(!state.songIndex.find(function(x){return x.id===s.id;})){
+             state.songIndex.push({ id:s.id, title:s.title||'导入的歌曲', updatedAt:s.updatedAt||Date.now() });
+@@ -2892,7 +2936,7 @@ function buildExportHtml(song){
+     html += '</div>';
+ 
+     var lineCharIds = line.chars.map(function(c){return c.id;});
+-    var seen = {}; var stripHtml = '';
++    var seen = Object.create(null); var stripHtml = '';
+     (song.annotations||[]).forEach(function(a){
+       if(a.position==='below' && a.charIds.some(function(id){return lineCharIds.indexOf(id)!==-1;}) && !seen[a.id]){
+         seen[a.id]=true;
+@@ -2953,7 +2997,7 @@ function buildPlayerLyricPackage(song){
+     html += '</div>';
+ 
+     var lineCharIds = line.chars.map(function(c){return c.id;});
+-    var seen = {}; var stripHtml = '';
++    var seen = Object.create(null); var stripHtml = '';
+     (song.annotations||[]).forEach(function(a){
+       if(a.position==='below' && a.charIds.some(function(id){return lineCharIds.indexOf(id)!==-1;}) && !seen[a.id]){
+         seen[a.id]=true;
+diff --git a/audit-evidence/original/renderer/vendor/package.json b/renderer/vendor/package.json
+index 2230f2f..2c166fa 100644
+--- a/audit-evidence/original/renderer/vendor/package.json
++++ b/renderer/vendor/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "sprintf-js",
+-  "version": "1.1.4",
++  "version": "1.1.3-local.1",
+   "description": "Local security patch based on upstream sprintf-js 1.1.3",
+   "main": "src/sprintf.js",
+   "license": "BSD-3-Clause"

@@ -1,0 +1,13 @@
+'use strict';
+const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
+const asar = require('@electron/asar');
+const archive = path.resolve(__dirname, '../dist/win-unpacked/resources/app.asar');
+const root = path.resolve(__dirname, '..'), names = asar.listPackage(archive);
+const sourceFiles = ['main.js', 'preload.js', 'renderer/index.html', 'renderer/desktop-lyric.html', 'renderer/vendor/sprintf.js', 'renderer/vendor/src/sprintf.js', 'renderer/vendor/package.json', 'renderer/vendor/SECURITY-PATCH.md'];
+for (const name of sourceFiles) assert.ok(asar.extractFile(archive, path.normalize(name)).equals(fs.readFileSync(path.join(root, name))), name);
+const binaries = fs.readdirSync(path.join(root, 'resources/ffmpeg')).filter(n => /\.(exe|dll)$/.test(n));
+for (const name of binaries) assert.ok(fs.readFileSync(path.join(root, 'resources/ffmpeg', name)).equals(fs.readFileSync(path.join(root, 'dist/win-unpacked/resources/ffmpeg', name))), name);
+const result = { verifiedAt: new Date().toISOString(), asarSourceMatches: sourceFiles, nativeBinaryMatches: binaries, undiciBundled: names.some(n => /node_modules[\\/]undici(?:[\\/]|$)/.test(n)), oldHtml2canvasBundled: names.some(n => /node_modules[\\/]html2canvas(?:[\\/]|$)/.test(n)), buildFetchBundled: names.some(n => /scripts[\\/]build-fetch.cjs$/.test(n)), sprintfVendorBundled: names.some(n => /vendor[\\/]sprintf.js$/.test(n)) };
+assert.equal(result.undiciBundled, false); assert.equal(result.oldHtml2canvasBundled, false); assert.equal(result.buildFetchBundled, false);
+fs.writeFileSync(path.join(__dirname, 'package-verification.json'), JSON.stringify(result, null, 2));
+console.log(JSON.stringify(result, null, 2));

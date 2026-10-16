@@ -1,0 +1,470 @@
+[
+  {
+    "path": ".gitignore",
+    "originalSha256": "403fc92cb6623f3c7fdc9275bb53e5f448b888d8e261db2a4a6650a2faa51f15",
+    "currentSha256": "403fc92cb6623f3c7fdc9275bb53e5f448b888d8e261db2a4a6650a2faa51f15",
+    "changed": false
+  },
+  {
+    "path": "main.js",
+    "originalSha256": "517eed34db64f829e146199439297ccc30add239944389a0d67295642b279aa6",
+    "currentSha256": "4b499d8b078a4622ae71958727740f842ec6ee4cf761867a60d5f54a765d3c8e",
+    "changed": true
+  },
+  {
+    "path": "N7m.ico",
+    "originalSha256": "8611e12ef6cc8744f9b2976f304166bb6b7c87cd96223c04c68e9d1b82d91193",
+    "currentSha256": "8611e12ef6cc8744f9b2976f304166bb6b7c87cd96223c04c68e9d1b82d91193",
+    "changed": false
+  },
+  {
+    "path": "package-lock.json",
+    "originalSha256": "7a438579fa87c9869fa5e83739d2806d6eb13ab91807ab40bf82bcf5261dec69",
+    "currentSha256": "25144a20228bd057e8bceb10e1842df9ab7f9b2c58b882eb721d846b5e2683e5",
+    "changed": true
+  },
+  {
+    "path": "package.json",
+    "originalSha256": "391f0a04e8949bcbe4de5ff7e9ac97533de3f24a505fd596234afd3139ca375d",
+    "currentSha256": "b2a15905b35aa84fd2ec160d874cfdea21101bc79dd0d8513e460ee4353bc7b3",
+    "changed": true
+  },
+  {
+    "path": "preload.js",
+    "originalSha256": "d7321d3cf897aa9194866acc2869142ffc89577072f6576a2660796e5f059323",
+    "currentSha256": "d7321d3cf897aa9194866acc2869142ffc89577072f6576a2660796e5f059323",
+    "changed": false
+  },
+  {
+    "path": "README.md",
+    "originalSha256": "c1f2cbdaea2c3f230f6eb0661c85171a03368c2fcbc726b20101d0b929496ee1",
+    "currentSha256": "11349e1b2060eb121e5355b0ea39fa04ff32ca031fbe524c0c722422e80c99a2",
+    "changed": true
+  },
+  {
+    "path": "SECURITY_AUDIT_REPORT.html",
+    "originalSha256": "7cd91cf83ebd9c6eafed875a4411fbde4722a43cc5ab71dff9d24e1e06d7b641",
+    "currentSha256": "7cd91cf83ebd9c6eafed875a4411fbde4722a43cc5ab71dff9d24e1e06d7b641",
+    "changed": false
+  },
+  {
+    "path": "SECURITY_AUDIT_REPORT.md",
+    "originalSha256": "9f926720d51cf26ae2c7f7482f0c2c1f44ffc570d2a61a338f8c1aa0db325f67",
+    "currentSha256": "9f926720d51cf26ae2c7f7482f0c2c1f44ffc570d2a61a338f8c1aa0db325f67",
+    "changed": false
+  },
+  {
+    "path": "renderer/desktop-lyric.html",
+    "originalSha256": "485aaa3797ff3b44be7bec26a4f73b1a41871fede48d5cacd03bf84523449e57",
+    "currentSha256": "485aaa3797ff3b44be7bec26a4f73b1a41871fede48d5cacd03bf84523449e57",
+    "changed": false
+  },
+  {
+    "path": "renderer/index.html",
+    "originalSha256": "0b16bc530b281902f7a42548e0107be32103abcf4fb6369f0cbf7eb826d29368",
+    "currentSha256": "6b5632843f093d9238ed6dd8eba862d8a0b9e758e0961997ac02b842b9bf0dd1",
+    "changed": true
+  },
+  {
+    "path": "scripts/build-ffmpeg-source-bundle.py",
+    "originalSha256": "d3be100b2e4eb8d6a481fb784d06810eef11f0d644921382d2274e0bb168ef79",
+    "currentSha256": "d3be100b2e4eb8d6a481fb784d06810eef11f0d644921382d2274e0bb168ef79",
+    "changed": false
+  },
+  {
+    "path": "scripts/ensure-ffmpeg.js",
+    "originalSha256": "2f850ad45fbfbfe8d9dfd133f2fb3de6c6a1bbc29f06ca53157ff336a9f7fcaf",
+    "currentSha256": "2f850ad45fbfbfe8d9dfd133f2fb3de6c6a1bbc29f06ca53157ff336a9f7fcaf",
+    "changed": false
+  },
+  {
+    "path": "scripts/write-installer-checksum.js",
+    "originalSha256": "a45971747e47b9b7797e6efc1a258168250916925a8c499fde8d4a4484071b84",
+    "currentSha256": "a45971747e47b9b7797e6efc1a258168250916925a8c499fde8d4a4484071b84",
+    "changed": false
+  },
+  {
+    "path": "renderer/vendor/LICENSE",
+    "originalSha256": "f8287e4dd9480be58c56aca4a55c23b782c43a86e69aabad78fff4df0d29edef",
+    "currentSha256": "f8287e4dd9480be58c56aca4a55c23b782c43a86e69aabad78fff4df0d29edef",
+    "changed": false
+  },
+  {
+    "path": "renderer/vendor/package.json",
+    "originalSha256": "e075f26a4145f6e4f984a0c3896339f5ae31e9c3ceac6acdc9455a4db9346d53",
+    "currentSha256": "ada6edbc110992fde0ad031426aaa5863b745c5e759f1ed7106b9039a22eca8f",
+    "changed": true
+  },
+  {
+    "path": "renderer/vendor/README.md",
+    "originalSha256": "7ad0f2cd7d75197c892c08dfa0321d7340197e5b6d090aafef791db3dc2f275b",
+    "currentSha256": "7ad0f2cd7d75197c892c08dfa0321d7340197e5b6d090aafef791db3dc2f275b",
+    "changed": false
+  },
+  {
+    "path": "renderer/vendor/sprintf.js",
+    "originalSha256": "1a7bd08021bf192bf63cc8653be6e90df8b270bc524d706dabd5f94f5b8b5311",
+    "currentSha256": "1a7bd08021bf192bf63cc8653be6e90df8b270bc524d706dabd5f94f5b8b5311",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/avcodec-62.dll",
+    "originalSha256": "e8995e61efd04c32c889918bea590e554e9699135dabf5f14a900df1afee75a5",
+    "currentSha256": "e8995e61efd04c32c889918bea590e554e9699135dabf5f14a900df1afee75a5",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/avfilter-11.dll",
+    "originalSha256": "ba49903cba7d732d667c30e62cc691eb027e9d9eb88780d0d3d9120980f622f8",
+    "currentSha256": "ba49903cba7d732d667c30e62cc691eb027e9d9eb88780d0d3d9120980f622f8",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/avformat-62.dll",
+    "originalSha256": "98eebb0de3af7df55366c190961e7d44c64fbfdd15d0016e642e5297e36804e9",
+    "currentSha256": "98eebb0de3af7df55366c190961e7d44c64fbfdd15d0016e642e5297e36804e9",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/avutil-60.dll",
+    "originalSha256": "5ca93c70c8ae22a67d780a2cfe0b2d9f8e08283f5511d6ce124cbb6703ff50ba",
+    "currentSha256": "5ca93c70c8ae22a67d780a2cfe0b2d9f8e08283f5511d6ce124cbb6703ff50ba",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/BUILD_INFO",
+    "originalSha256": "a182132d32f6236afd42245d0dbb59c9b7621c94448d51b92b4024951f18f594",
+    "currentSha256": "a182132d32f6236afd42245d0dbb59c9b7621c94448d51b92b4024951f18f594",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/CONTROL",
+    "originalSha256": "19b6c52c461b2d0416b011e6ee4cee47bc8234c0ed19d0289075a22d42ec76e4",
+    "currentSha256": "19b6c52c461b2d0416b011e6ee4cee47bc8234c0ed19d0289075a22d42ec76e4",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/DEPENDENCIES-MINIMAL.txt",
+    "originalSha256": "045f39c2ac86bea18c11e0bf6d27640dd3c1c25895b1544e558a83b3e4584d7e",
+    "currentSha256": "045f39c2ac86bea18c11e0bf6d27640dd3c1c25895b1544e558a83b3e4584d7e",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/ffmpeg.exe",
+    "originalSha256": "8c83777bdcd040e09de5f525c05c5679e2967ae9e0f88a7b4ccffc8ca35f832e",
+    "currentSha256": "8c83777bdcd040e09de5f525c05c5679e2967ae9e0f88a7b4ccffc8ca35f832e",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/LAME-LICENSE.txt",
+    "originalSha256": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd",
+    "currentSha256": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/libmp3lame.dll",
+    "originalSha256": "6766c560292825500babde20e9196ce4e376a176613abd410520fb514084071d",
+    "currentSha256": "6766c560292825500babde20e9196ce4e376a176613abd410520fb514084071d",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/LICENSE.txt",
+    "originalSha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+    "currentSha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/NOTICE.txt",
+    "originalSha256": "ff5f13fd36e15b44cfd599b540f52b6289a60285438651e0c5932ab26ee6c0e1",
+    "currentSha256": "ff5f13fd36e15b44cfd599b540f52b6289a60285438651e0c5932ab26ee6c0e1",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/PROVENANCE.md",
+    "originalSha256": "8e51da295d574557e04c7cb8c0eed97b9fdb2af9d196ff7bb3935c3d995af7b4",
+    "currentSha256": "8e51da295d574557e04c7cb8c0eed97b9fdb2af9d196ff7bb3935c3d995af7b4",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/swresample-6.dll",
+    "originalSha256": "964b43939b1e3d706d313c0936faec6885b7bc4788937a83e429b8e98ee28991",
+    "currentSha256": "964b43939b1e3d706d313c0936faec6885b7bc4788937a83e429b8e98ee28991",
+    "changed": false
+  },
+  {
+    "path": "resources/ffmpeg/vcpkg.spdx.json",
+    "originalSha256": "0c3dde73ca20eef2fc459db223a93f0b0529834451d292064bbacf65b2a7eb52",
+    "currentSha256": "0c3dde73ca20eef2fc459db223a93f0b0529834451d292064bbacf65b2a7eb52",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/build-local.ps1",
+    "originalSha256": "2853e541346cb62c4eb89562cfad1dc0a98976692c913e65853b3b59009f34b1",
+    "currentSha256": "2853e541346cb62c4eb89562cfad1dc0a98976692c913e65853b3b59009f34b1",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/stage-runtime.js",
+    "originalSha256": "3f97ba5fbbc783741076159223d6a81dcd9c688a232c176edd33624630a0a401",
+    "currentSha256": "3f97ba5fbbc783741076159223d6a81dcd9c688a232c176edd33624630a0a401",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/cinnabar.jpg",
+    "originalSha256": "d6a9cc0cce0e11d66bb264352779eb6aa46606ffeab1259734db8e121a1ae8de",
+    "currentSha256": "d6a9cc0cce0e11d66bb264352779eb6aa46606ffeab1259734db8e121a1ae8de",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/dai-qing-night.jpg",
+    "originalSha256": "b4cf856469590c8fff2ce1644daf6f0d8c4cb8da0b3e8efb11776ba15f9fe354",
+    "currentSha256": "b4cf856469590c8fff2ce1644daf6f0d8c4cb8da0b3e8efb11776ba15f9fe354",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/forest.jpg",
+    "originalSha256": "5cbc84cad5ad0ec895322259987e12fb242a18c003d8e48d05341b47bcd7da4a",
+    "currentSha256": "5cbc84cad5ad0ec895322259987e12fb242a18c003d8e48d05341b47bcd7da4a",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/ink-landscape.jpg",
+    "originalSha256": "dd9a9277f771666d3dcb916c553c7c2bf52f32aa2efecc3a129a437b04e27a85",
+    "currentSha256": "dd9a9277f771666d3dcb916c553c7c2bf52f32aa2efecc3a129a437b04e27a85",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/jiangnan.jpg",
+    "originalSha256": "b36e33a4ec17dbdb7ae7f6d6920c2b9cfff373c3dcc558ee9c88b2544d5132bc",
+    "currentSha256": "b36e33a4ec17dbdb7ae7f6d6920c2b9cfff373c3dcc558ee9c88b2544d5132bc",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/lavender.jpg",
+    "originalSha256": "1b027c94deeaa67a3437f7bb857ea83adcc422d7b27481dec8549c064f1540bc",
+    "currentSha256": "1b027c94deeaa67a3437f7bb857ea83adcc422d7b27481dec8549c064f1540bc",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/light.jpg",
+    "originalSha256": "f69b266c0bf35a2637c0543d8f98c8fbe2b33c373c2f5605be59fcf95d2fa3a7",
+    "currentSha256": "f69b266c0bf35a2637c0543d8f98c8fbe2b33c373c2f5605be59fcf95d2fa3a7",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/lotus.jpg",
+    "originalSha256": "7604e05a2a0f6ca587517f6eb5dcd8f9c59f8e4b252a919afabaec30c234c3a6",
+    "currentSha256": "7604e05a2a0f6ca587517f6eb5dcd8f9c59f8e4b252a919afabaec30c234c3a6",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/ocean.jpg",
+    "originalSha256": "92cb600ec33da9e28b1e0e10c3786927e98b4eeb67a66c5f21594ec2d749fa5e",
+    "currentSha256": "92cb600ec33da9e28b1e0e10c3786927e98b4eeb67a66c5f21594ec2d749fa5e",
+    "changed": false
+  },
+  {
+    "path": "renderer/assets/theme-backgrounds/sakura.jpg",
+    "originalSha256": "ecf3117f6192562df3c28c9716820a0e1a5791d91b0818253901963d57bd3be0",
+    "currentSha256": "ecf3117f6192562df3c28c9716820a0e1a5791d91b0818253901963d57bd3be0",
+    "changed": false
+  },
+  {
+    "path": "renderer/vendor/src/sprintf.js",
+    "originalSha256": "1a7bd08021bf192bf63cc8653be6e90df8b270bc524d706dabd5f94f5b8b5311",
+    "currentSha256": "1a7bd08021bf192bf63cc8653be6e90df8b270bc524d706dabd5f94f5b8b5311",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/features.cmake",
+    "originalSha256": "3be5b1b3fb7c52f4da56f58cedf9c16eef77a3e644f3041edae2db7d7e0363e1",
+    "currentSha256": "3be5b1b3fb7c52f4da56f58cedf9c16eef77a3e644f3041edae2db7d7e0363e1",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/portfile.cmake",
+    "originalSha256": "09af218d70c414f3121ee2d125e1d279e681eb2c0f37633431770f92dcdd6b7c",
+    "currentSha256": "09af218d70c414f3121ee2d125e1d279e681eb2c0f37633431770f92dcdd6b7c",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/usage",
+    "originalSha256": "27360ea0414db7504123d203583a0aaf7be066f9f669d01e60ea57a0976473b5",
+    "currentSha256": "27360ea0414db7504123d203583a0aaf7be066f9f669d01e60ea57a0976473b5",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/vcpkg.json",
+    "originalSha256": "d15eff8b8be8a2c2870e6406b79ccceadfd8e704a736e7bdafd9fcc7086c1d12",
+    "currentSha256": "d15eff8b8be8a2c2870e6406b79ccceadfd8e704a736e7bdafd9fcc7086c1d12",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg-bin2c/CMakeLists.txt",
+    "originalSha256": "34494e542f19ce9959a2851825dfafd501b23494a789c282d0985eec6b1bb72e",
+    "currentSha256": "34494e542f19ce9959a2851825dfafd501b23494a789c282d0985eec6b1bb72e",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg-bin2c/portfile.cmake",
+    "originalSha256": "96deb6c9284963d1dcedb0f56d31558b96870c082300cc1fa4f2c9de1b28d811",
+    "currentSha256": "96deb6c9284963d1dcedb0f56d31558b96870c082300cc1fa4f2c9de1b28d811",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg-bin2c/vcpkg.json",
+    "originalSha256": "8356d9c35e0eaf07f8b30c7bec40a62cdd2cbdc62dd6e761fe0eb93afdaca8a2",
+    "currentSha256": "8356d9c35e0eaf07f8b30c7bec40a62cdd2cbdc62dd6e761fe0eb93afdaca8a2",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/mp3lame/00001-msvc-upgrade-solution-up-to-vc11.patch",
+    "originalSha256": "a75204e3f5c8d94deba46101794b1ed08e373a8de7935e13e8a9cad5803f7291",
+    "currentSha256": "a75204e3f5c8d94deba46101794b1ed08e373a8de7935e13e8a9cad5803f7291",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/mp3lame/add-macos-universal-config.patch",
+    "originalSha256": "e50e5bd9a3a41b6374f45b8fdbe7bce062f967cafd1e5c7090735953fbc2f8fa",
+    "currentSha256": "e50e5bd9a3a41b6374f45b8fdbe7bce062f967cafd1e5c7090735953fbc2f8fa",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/mp3lame/fix-mingw-w64-compatibility.patch",
+    "originalSha256": "020c74f7683d511a14ddf25a7148a4cc15fb5fd5ff38d3cfb76f5ef3ee7ddfd9",
+    "currentSha256": "020c74f7683d511a14ddf25a7148a4cc15fb5fd5ff38d3cfb76f5ef3ee7ddfd9",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/mp3lame/mp3lame-config.cmake",
+    "originalSha256": "3687d55e5ed1fdf3874ef57b8059d9f11a42b8c93316b582e0e354632f1afaf7",
+    "currentSha256": "3687d55e5ed1fdf3874ef57b8059d9f11a42b8c93316b582e0e354632f1afaf7",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/mp3lame/portfile.cmake",
+    "originalSha256": "d9f7fb6a7e16121495413c56f178bfdede04391ec4618d9ead81369489810648",
+    "currentSha256": "d9f7fb6a7e16121495413c56f178bfdede04391ec4618d9ead81369489810648",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/mp3lame/remove_lame_init_old_from_symbol_list.patch",
+    "originalSha256": "ae9d1ca1781a329fe1fa932752eba9617b5a1ee98c1975759e18b18c3b482db5",
+    "currentSha256": "ae9d1ca1781a329fe1fa932752eba9617b5a1ee98c1975759e18b18c3b482db5",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/mp3lame/vcpkg.json",
+    "originalSha256": "bf19c2ee29c68a476299bfcb25beef94703bfb31e1ffe90f34fa54dd98975cb7",
+    "currentSha256": "bf19c2ee29c68a476299bfcb25beef94703bfb31e1ffe90f34fa54dd98975cb7",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/builder/build.sh.in",
+    "originalSha256": "0024dadc710687c7ab2dd524c859b357f97a1e432c04cf281876008ec93ed36a",
+    "currentSha256": "0024dadc710687c7ab2dd524c859b357f97a1e432c04cf281876008ec93ed36a",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/builder/ffmpeg-portfile.cmake",
+    "originalSha256": "4c0b1cc89703a2cdbf494cfdf585da38f88bed72dfa855a73f5e012e13c77f31",
+    "currentSha256": "4c0b1cc89703a2cdbf494cfdf585da38f88bed72dfa855a73f5e012e13c77f31",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/builder/FindFFmpeg.cmake.in",
+    "originalSha256": "58cbc70c7814cd8bc8720b14a9ff07ce660ae95474565ffc39616c4184ab621d",
+    "currentSha256": "58cbc70c7814cd8bc8720b14a9ff07ce660ae95474565ffc39616c4184ab621d",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/builder/vcpkg-cmake-wrapper.cmake",
+    "originalSha256": "7c55bf2419ecd4ebb74892dd8f935184bc9d5434c2684a127859b6cf43b53205",
+    "currentSha256": "7c55bf2419ecd4ebb74892dd8f935184bc9d5434c2684a127859b6cf43b53205",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0002-fix-msvc-link-8.1.patch",
+    "originalSha256": "45611935478d66262fde55d2b1dbe122fc0da58c0f3e07682e78734ab2e4fc1f",
+    "currentSha256": "45611935478d66262fde55d2b1dbe122fc0da58c0f3e07682e78734ab2e4fc1f",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0003-fix-windowsinclude.patch",
+    "originalSha256": "9030b03bcc83d9005401b05754d6dae07255b20eda327ae3fe410df94cd1fead",
+    "currentSha256": "9030b03bcc83d9005401b05754d6dae07255b20eda327ae3fe410df94cd1fead",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0004-dependencies-8.1.patch",
+    "originalSha256": "24d5b815d736be69e93d5f9101328fc4c5a7b0dcc1e7bc99bed15703cd811434",
+    "currentSha256": "24d5b815d736be69e93d5f9101328fc4c5a7b0dcc1e7bc99bed15703cd811434",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0005-fix-nasm-8.1.patch",
+    "originalSha256": "4c744e36bd4a7f6ff6fd51b94295b18dc78b229f030d5636fb4efedf8658c9d6",
+    "currentSha256": "4c744e36bd4a7f6ff6fd51b94295b18dc78b229f030d5636fb4efedf8658c9d6",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0007-fix-lib-naming-8.1.patch",
+    "originalSha256": "7bc1c6d6f792d6065be208222b899b50339aea300f79c89456059ac9f3db0cda",
+    "currentSha256": "7bc1c6d6f792d6065be208222b899b50339aea300f79c89456059ac9f3db0cda",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0013-define-WINVER-8.1.patch",
+    "originalSha256": "dba22ed5a6544fdcd4e85a3ca6b470857ba6343b63d34776fdea1823d689a35a",
+    "currentSha256": "dba22ed5a6544fdcd4e85a3ca6b470857ba6343b63d34776fdea1823d689a35a",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0024-fix-osx-host-c11-8.1.patch",
+    "originalSha256": "1cdb52872429c852cc4358d2122cc847c7e251c149af382c61535f1de42221f2",
+    "currentSha256": "1cdb52872429c852cc4358d2122cc847c7e251c149af382c61535f1de42221f2",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0040-ffmpeg-add-av_stream_get_first_dts-for-chromium.patch",
+    "originalSha256": "3e00a2918ded31d579c1fe9619f7c81ba7d4541a27417c71d41aac054300f7d2",
+    "currentSha256": "3e00a2918ded31d579c1fe9619f7c81ba7d4541a27417c71d41aac054300f7d2",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0045-use-prebuilt-bin2c-8.1.patch",
+    "originalSha256": "5510a5d6cc0e6cac881157b8432dcd14672e6618c8b9e8719414e1d3c1804e21",
+    "currentSha256": "5510a5d6cc0e6cac881157b8432dcd14672e6618c8b9e8719414e1d3c1804e21",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0046-fix-msvc-detection-8.1.patch",
+    "originalSha256": "868ea2d15d4bdc189847d452a45e1e1caddf79e183dd4926f73530f104803a40",
+    "currentSha256": "868ea2d15d4bdc189847d452a45e1e1caddf79e183dd4926f73530f104803a40",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0047-fix-msvc-utf8.patch",
+    "originalSha256": "76e199ae27fc8f8be518ffa45d07c152abc3a0e05e42130ae5d6b54a26bc5683",
+    "currentSha256": "76e199ae27fc8f8be518ffa45d07c152abc3a0e05e42130ae5d6b54a26bc5683",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0048-backport-23039.patch",
+    "originalSha256": "1a056c13a41358b7fab236ecaeb32db1748d223a5e26144c8663c3dbdefee722",
+    "currentSha256": "1a056c13a41358b7fab236ecaeb32db1748d223a5e26144c8663c3dbdefee722",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0050-lensfun-0.3.4-compat-8.x.patch",
+    "originalSha256": "9eac96fa3b3cc1ec544c9a8c64ed636b9511d56aad04be9013ac3cc8edb1406a",
+    "currentSha256": "9eac96fa3b3cc1ec544c9a8c64ed636b9511d56aad04be9013ac3cc8edb1406a",
+    "changed": false
+  },
+  {
+    "path": "scripts/ffmpeg-minimal/ports/ffmpeg/patches/0051-lensfun-configure-fix-8.x.patch",
+    "originalSha256": "eb1d79591a6619516ba508cfb46d585599856f53fdfe1255b5eab4014de784d7",
+    "currentSha256": "eb1d79591a6619516ba508cfb46d585599856f53fdfe1255b5eab4014de784d7",
+    "changed": false
+  }
+]

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>唱歌笔记桌面版 · 安全审核</title>
+<style>
+:root{color-scheme:light;--ink:#102033;--muted:#587084;--line:#dbe5eb;--green:#36af8e;--green-soft:#eaf7f2;--amber:#a96612;--amber-soft:#fff5e5;--blue:#2d6690;--paper:#fff;--bg:#f3f7f9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+main{max-width:1040px;margin:38px auto;padding:42px 52px 36px;background:var(--paper);box-shadow:0 10px 40px #233e5412}
+header{border-bottom:1px solid var(--line);padding-bottom:22px}
+.kicker{margin:0 0 9px;color:var(--green);font-size:12px;font-weight:700;letter-spacing:.12em}
+h1{font-size:29px;line-height:1.25;margin:0 0 8px;letter-spacing:-.02em}
+.subtitle{margin:0;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:25px 0 27px}
+.stat{padding:16px 18px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.stat b{display:block;font-size:25px;line-height:1.2}
+.stat span{display:block;margin-top:5px;color:var(--muted);font-size:12px}
+.stat.good b{color:var(--green)}.stat.warn b{color:var(--amber);font-size:19px}
+.callout{border-left:3px solid var(--green);background:var(--green-soft);padding:15px 18px;margin:0 0 27px}
+.callout strong{display:block;margin-bottom:3px}
+section{margin:29px 0}
+h2{font-size:20px;line-height:1.3;margin:0 0 13px}
+h3{font-size:16px;margin:18px 0 7px}
+p{margin:7px 0}
+ul{margin:8px 0;padding-left:21px}
+li{margin:4px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{border:1px solid var(--line);border-radius:7px;padding:15px 17px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:7px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{background:#f6f9fa;color:#385267;font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+code{font:12px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere;color:#284d68}
+.tag{display:inline-block;border-radius:20px;padding:1px 8px;font-size:11px;font-weight:700;background:#edf3f6;color:#385267;white-space:nowrap}
+.tag.high{background:#fff0e9;color:#a33b20}.tag.medium{background:#fff5e5;color:#986012}.tag.low{background:#edf3f6}
+.status{color:#17795f;font-weight:600}.pending{color:#9b5b0c;font-weight:600}
+.small{color:var(--muted);font-size:13px}
+a{color:#176b93;text-decoration:none}a:hover{text-decoration:underline}
+.hash{font-size:12px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding-top:13px;margin-top:33px;color:var(--muted);font-size:12px}
+@media(max-width:760px){main{margin:0;padding:25px 18px}.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}h1{font-size:25px}}
+@media print{body{background:#fff}main{max-width:none;margin:0;padding:20px;box-shadow:none}.table-wrap{overflow:visible}a{color:inherit}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="kicker">SECURITY REVIEW · WINDOWS X64 · 2026-10-16</p>
+  <h1>唱歌笔记桌面版安全审核</h1>
+  <p class="subtitle">JavaScript / Electron 44.5.1 · npm lockfile v3 · FFmpeg 8.1.3 + LAME 3.100 · 审核范围：应用代码、依赖、原生运行时、密钥与发行包</p>
+</header>
+
+<div class="stats" aria-label="审核指标">
+  <div class="stat"><b>0</b><span>已知 Critical / High 可达问题</span></div>
+  <div class="stat good"><b>10</b><span>已修复或通过构建隔离</span></div>
+  <div class="stat"><b>0</b><span>待开发者选择的设计方案</span></div>
+  <div class="stat warn"><b>1 项</b><span>发行前置：Authenticode 签名</span></div>
+</div>
+
+<div class="callout">
+  <strong>结论：当前应用路径未发现可触发的已知 Critical / High 漏洞。</strong>
+  npm audit 检查 309 个依赖，0 个已知漏洞。FFmpeg 8.1.3 上游公告涉及的 DVB 字幕解析器、RSCC、Screenpresso 和 TIFF 组件均未编入最小发行二进制。安装器和对应 LGPL 源码包已经本地生成；安装器目前未签名，公开下载前需要发行方证书。
+</div>
+
+<section>
+<h2>项目概况</h2>
+<div class="grid">
+  <div class="panel">
+    <h3>技术与依赖</h3>
+    <p>Windows x64 Electron 桌面端。5 个直接 npm 依赖；lockfile 共 310 个 package 条目（含根项目）。</p>
+    <p>npm audit：309 项依赖，0 个 Critical / High / Medium / Low 告警。</p>
+  </div>
+  <div class="panel">
+    <h3>审核范围</h3>
+    <p>main/preload、标注与播放器页面、IPC 和文件路径、动态 HTML、npm 清单、FFmpeg/LAME 构建配方、许可证/SPDX、最终 ASAR 与发行目录、密钥模式和 CI 配置。</p>
+    <p class="small">项目没有后端数据库、浏览器扩展或 GitHub Actions workflow；相关检查项不适用。</p>
+  </div>
+</div>
+<p>FFmpeg 使用 LGPL-3.0-or-later；动态链接的 LAME 3.100 使用 LGPL-2.0-only。二进制从固定 SHA-512 的源码归档本地构建，不使用第三方预编译 FFmpeg。</p>
+</section>
+
+<section>
+<h2>问题汇总</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>编号</th><th>类别</th><th>级别</th><th>位置</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>DEP-01</td><td>依赖</td><td><span class="tag medium">Medium</span></td><td>原 ffmpeg-static 5.3.0 / FFmpeg 6.1.1；现为 resources/ffmpeg/BUILD_INFO:1-55</td><td class="status">已修复：替换为源码构建的最小 LGPL 运行时</td></tr>
+<tr><td>DEP-02</td><td>依赖</td><td><span class="tag high">High</span></td><td>CVE-2026-70628 · portfile.cmake:6；BUILD_INFO:42-55</td><td class="status">已隔离：DVB subtitle parser 未编入</td></tr>
+<tr><td>DEP-03</td><td>依赖</td><td><span class="tag medium">Medium</span></td><td>CVE-2026-70629 · BUILD_INFO:42-44</td><td class="status">已隔离：RSCC decoder 未编入</td></tr>
+<tr><td>DEP-04</td><td>依赖</td><td><span class="tag medium">Medium</span></td><td>CVE-2026-70630 · BUILD_INFO:42-44</td><td class="status">已隔离：Screenpresso decoder 未编入</td></tr>
+<tr><td>DEP-05</td><td>依赖</td><td><span class="tag medium">Medium</span></td><td>CVE-2026-70631 · BUILD_INFO:42-44</td><td class="status">已隔离：TIFF decoder 未编入</td></tr>
+<tr><td>CODE-01</td><td>代码</td><td><span class="tag low">Low</span></td><td>main.js:337-375</td><td class="status">已修复：输入校验、固定参数、file-only、超时和通用错误</td></tr>
+<tr><td>CODE-02</td><td>代码</td><td><span class="tag low">Low</span></td><td>renderer/index.html:6-10</td><td class="status">已修复：移除远程字体请求，CSP 限制外连</td></tr>
+<tr><td>CODE-03</td><td>代码</td><td><span class="tag low">Low</span></td><td>renderer/index.html:1327-1329、2859-2961</td><td class="status">已加固：动态 HTML 内容统一转义</td></tr>
+<tr><td>DEP-06</td><td>依赖</td><td><span class="tag low">Low</span></td><td>package.json:34,72；renderer/index.html:8</td><td class="status">已修复：改用 html2canvas-pro 2.5.2，旧包不进 ASAR</td></tr>
+<tr><td>REL-01</td><td>发行材料</td><td><span class="tag low">Low</span></td><td>resources/ffmpeg/NOTICE.txt；dist 源码 ZIP</td><td class="status">已完成：对应源码、许可证、配方和哈希清单已生成</td></tr>
+<tr><td>DEP-07</td><td>依赖维护</td><td><span class="tag low">Low</span></td><td>package-lock.json:2263；package.json:34</td><td>建议关注：html2canvas 1.4.1 只在可选依赖树中，未进入 ASAR</td></tr>
+<tr><td>REL-02</td><td>发行配置</td><td><span class="tag low">Low</span></td><td>dist/唱歌笔记桌面版 Setup 1.0.0.exe</td><td class="pending">待发行方提供受信任 Authenticode 证书</td></tr>
+</tbody>
+</table></div>
+<p class="small">CVE-2026-70628 的上游评分为 High；CVE-2026-70629/70630/70631 为 Moderate。这里的“已隔离”表示受影响组件未编入发行二进制，并非声称通用 FFmpeg 8.1.3 已修复这些问题。对应漏洞需 FFmpeg 处理恶意 WTV/DVB subtitle、RSCC、Screenpresso 或 TIFF 数据；当前应用只接收自生成 PCM WAV，且相应 parser/decoder 不存在。<a href="https://ubuntu.com/security/CVE-2026-70628">CVE-70628</a> · <a href="https://access.redhat.com/security/cve/cve-2026-70629">CVE-70629</a> · <a href="https://access.redhat.com/security/cve/cve-2026-70630">CVE-70630</a> · <a href="https://github.com/advisories/GHSA-5f73-3r3j-p8mr">CVE-70631</a></p>
+<h3>风险与利用条件</h3>
+<ul>
+<li><strong>DEP-01：</strong>旧通用 FFmpeg 只有在攻击者控制的媒体进入对应 demuxer/decoder 时才可能触发原生漏洞；旧包已替换。</li>
+<li><strong>DEP-02 至 DEP-05：</strong>分别需要 crafted WTV/DVB subtitle、RSCC、Screenpresso 或 TIFF 数据进入受影响 parser/decoder；这些组件未编入当前二进制。</li>
+<li><strong>CODE-01：</strong>损坏录音导致转码失败时，旧错误可能把 FFmpeg stderr 或临时文件路径带回渲染层；现仅返回通用失败提示。</li>
+<li><strong>CODE-02：</strong>旧远程字体请求会让第三方字体服务收到访问方网络元数据；请求已移除，页面资源限于本地。</li>
+<li><strong>CODE-03：</strong>若导入的歌词、曲名或标注未转义便插入 innerHTML，内容可能成为脚本；动态文本统一转义。</li>
+<li><strong>DEP-06/DEP-07：</strong>旧 html2canvas 仅残留在 jsPDF 可选安装树中，不进入发行 ASAR；后续可评估从安装树彻底去除。</li>
+<li><strong>REL-01/REL-02：</strong>发布 LGPL 二进制时缺少对应源码有许可合规风险；源码包已生成。未签名安装器缺少发行者身份校验，需用发行方证书签名后再公开。</li>
+</ul>
+</section>
+
+<section>
+<h2>依赖与版本</h2>
+<h3>直接依赖</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>包</th><th>类型</th><th>锁定版本</th></tr></thead>
+<tbody>
+<tr><td>electron</td><td>开发</td><td>44.5.1</td></tr>
+<tr><td>electron-builder</td><td>开发</td><td>26.15.3</td></tr>
+<tr><td>sprintf-js</td><td>本地 vendored 开发依赖</td><td>1.1.4</td></tr>
+<tr><td>html2canvas-pro</td><td>运行时</td><td>2.5.2</td></tr>
+<tr><td>jspdf</td><td>运行时</td><td>4.2.1</td></tr>
+</tbody></table></div>
+<h3>关键间接依赖</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>包</th><th>版本</th><th>包</th><th>版本</th></tr></thead>
+<tbody>
+<tr><td>app-builder-lib</td><td>26.15.3</td><td>builder-util-runtime</td><td>9.7.0</td></tr>
+<tr><td>@electron/asar</td><td>3.4.1</td><td>@electron/get</td><td>5.1.0</td></tr>
+<tr><td>undici</td><td>7.30.0</td><td>dompurify</td><td>3.4.16</td></tr>
+<tr><td>core-js</td><td>3.50.0</td><td>canvg</td><td>3.0.11</td></tr>
+<tr><td>fflate</td><td>0.8.3</td><td>pako</td><td>2.2.0</td></tr>
+<tr><td>html2canvas（jsPDF 可选依赖）</td><td>1.4.1</td><td></td><td></td></tr>
+</tbody></table></div>
+<p>npm audit 没有报告已知 npm 漏洞。Electron 44.5.1 高于本轮检查的 2026-10-15 公告修复版本；jsPDF 4.2.1、sprintf-js 1.1.4 和 electron-builder 26.15.3 / builder-util-runtime 9.7.0 不在本轮核对公告的受影响范围。npm audit 不覆盖原生 FFmpeg，已按上游安全公告单独检查。<a href="https://ffmpeg.org/security.html">FFmpeg 安全公告</a> · <a href="https://github.com/electron/electron/security/advisories">Electron 公告</a> · <a href="https://github.com/parallax/jsPDF/security/advisories/GHSA-wfv2-pwc8-crg5">jsPDF GHSA</a> · <a href="https://github.com/advisories/GHSA-hp3w-g68c-fv3c">sprintf-js GHSA</a></p>
+<p class="small">未发现疑似仿冒包。html2canvas 1.4.1 是唯一建议关注的老维护项：它仍在 jsPDF 的可选依赖树，但不在最终发行 ASAR，且当前 npm audit 无告警。</p>
+</section>
+
+<section>
+<h2>已修复问题与风险条件</h2>
+<div class="panel">
+<h3>依赖和原生组件</h3>
+<p><strong>旧 FFmpeg 风险：</strong>原 ffmpeg-static 5.3.0 携带通用 FFmpeg 6.1.1。只有当用户可控媒体进入相应格式/解码路径时，旧原生漏洞才可能被触发。本构建替换为本地源码构建的 8.1.3，并把组件限制到 WAV/PCM→MP3。</p>
+<p><strong>四项 FFmpeg 公告：</strong>对应漏洞分别要求 DVB subtitle parser、RSCC、Screenpresso 或 TIFF decoder 处理精心构造的媒体。构建时关闭 parser 和所有 decoder 后，仅启用 pcm_s16le；其余受影响模块未编入最终二进制。</p>
+<p><strong>支持组件：</strong>WAV demuxer、PCM S16LE decoder、MP3 muxer、libmp3lame encoder 和 file 协议。ffplay、ffprobe、网络、设备及硬件加速关闭。CLI 自动包含 16 个小型滤镜，名字记录于 BUILD_INFO；应用使用固定参数且不接收滤镜字符串。</p>
+<h3>代码、Electron 和数据边界</h3>
+<ul>
+<li>录音 IPC 检查 PCM WAV 头、声道数、采样率、样本宽度、数据长度和 256 MiB 上限；并发转码拒绝，FFmpeg 进程 120 秒超时。恶意或损坏 WAV 只能进入 WAV parser，当前无远程上传入口。</li>
+<li>FFmpeg 通过 execFile 调用固定可执行文件与参数，不经过 shell；只允许 file 协议。失败时不把 stderr、临时目录和本地路径传回 renderer。</li>
+<li>主/浮动窗口启用沙箱和上下文隔离，禁用 Node integration；导航、重定向、window.open 和 webview 受到限制；IPC 校验发送窗口与 frame。</li>
+<li>音频/LRC 真实路径限制在用户选择的目录下，并校验扩展名和体积。歌词、曲名和标注值进入 HTML 前转义；其他页面文本使用 textContent。</li>
+<li>移除了外部字体下载；页面 CSP 仅允许本地脚本、样式、媒体与资源。</li>
+</ul>
+<h3>源码、许可证与发布完整性</h3>
+<p>精确源码归档、LAME 源码、vcpkg overlay、应用补丁、许可证、SPDX、精确修订和构建说明均放入对应源码 ZIP。当前 ZIP SHA-512 清单和 ZIP CRC 检查通过。新暂存脚本支持显式应用路径、vcpkg 路径与 overlay 路径。每次 npm run dist 后会自动生成安装器 SHA-256 旁文件。</p>
+</div>
+</section>
+
+<section>
+<h2>密钥与凭据</h2>
+<p>检查了源码、配置、文档、lockfile、发行元数据和最终 ASAR 文本，没有发现 API Key、Token、密码、私钥、Webhook 或云访问凭据。未发现已跟踪的 .env 文件；.gitignore 忽略 .env 与 .env.*，保留 .env.example 例外。没有需要配置的应用密钥，因此未创建空的 .env.example。</p>
+<p><strong>提醒：</strong>如果凭据曾经提交或泄露到外部平台，必须到对应平台作废并重新生成；只删代码不够。</p>
+</section>
+
+<section>
+<h2>验证结果</h2>
+<ul>
+<li><strong>npm audit：</strong>309 项依赖，0 个已知漏洞。</li>
+<li><strong>npm ls --depth=0、JavaScript 语法与 git diff --check：</strong>通过；标注页 4 个 inline script、歌词页 1 个 inline script 语法检查通过。</li>
+<li><strong>npm run dist：</strong>最终 Windows x64 NSIS 安装器构建成功，postdist 自动写出 SHA-256 文件。</li>
+<li><strong>最终运行时：</strong>7 个 FFmpeg/LAME 二进制 SHA-256 全部符合 BUILD_INFO。</li>
+<li><strong>转码冒烟：</strong>最终解包目录中的 FFmpeg 将 1 秒 PCM WAV 转成 25,748 字节 MP3，ID3 标记有效。</li>
+<li><strong>ASAR：</strong>4,123 个文本文件凭据模式扫描无命中；包含 html2canvas-pro，不含旧 html2canvas 或 ffmpeg-static。</li>
+<li><strong>源码 ZIP：</strong>52 个条目，51 项 payload 哈希全部匹配，ZIP CRC 和旁文件 SHA-512 通过，内含 BUILD_INFO 与运行时一致。</li>
+<li>项目没有 test 脚本；PNG/PDF 导出回归在此前工作中已通过。</li>
+</ul>
+</section>
+
+<section>
+<h2>剩余风险与发布前待办</h2>
+<ol>
+<li><strong>安装器还未签名。</strong>本机代码签名证书数量为 0，Authenticode 状态是 NotSigned。请发行方在受控环境使用可信 Authenticode 证书签名；不要把私钥提交到仓库或发送到聊天。未签名安装器可能显示发布者未知或 SmartScreen 警告。</li>
+<li><strong>发布时同时托管源码包。</strong>安装器、源码 ZIP、校验文件和 LGPL 说明应放在同一公开下载页。本轮生成了本地材料，没有执行外部上传。</li>
+<li><strong>干净环境构建尚未独立复现。</strong>FFmpeg 已在当前机器从固定源码本地编译；源码包给出了固定版本和重建步骤。本轮验证了暂存/组件 allowlist、源码归档哈希及应用打包，但没有在全新空白机器执行完整 MSVC rebuild。</li>
+<li><strong>持续更新 FFmpeg。</strong>8.1.3 是 8.1 分支版本。此次公告涉及模块未编入；未来更新仍要复核上游安全公告、重建源码 ZIP 和安装器。</li>
+<li><strong>依赖维护建议。</strong>后续评估 jsPDF 是否能不安装可选 html2canvas 1.4.1；当前不影响发行包且 npm audit 无告警。</li>
+</ol>
+<p><strong>发布状态：</strong>安全修复和本地发行材料已完成；正式公开下载前需签名，并把文件上传至发行方的下载页。</p>
+</section>
+
+<section>
+<h2>本地发行文件</h2>
+<div class="panel">
+<p><strong>Windows 安装器：</strong>唱歌笔记桌面版 Setup 1.0.0.exe · 117,387,143 字节</p>
+<p class="hash"><strong>SHA-256：</strong>b4724f08fbe944c2a1eba7ec1e2c3f8e1723c45736ab0f68630ab66f5c5b7020</p>
+<p><strong>校验文件：</strong>dist/唱歌笔记桌面版 Setup 1.0.0.exe.sha256</p>
+<hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+<p><strong>LGPL 对应源码：</strong><a href="dist/ffmpeg-8.1.3-wav-pcm-mp3-source-x64-windows-lgpl.zip">ffmpeg-8.1.3-wav-pcm-mp3-source-x64-windows-lgpl.zip</a> · 30,138,902 字节</p>
+<p class="hash"><strong>SHA-512：</strong>ed0b566e55015a60f66badb67b27db132b0ec6d4d03efd092ef3233d37a48d9266d17cad23a4bc1f7c96274a321d7b9b53a9c39569155f6ec05d89953ce9168c</p>
+<p><strong>校验文件：</strong>dist/ffmpeg-8.1.3-wav-pcm-mp3-source-x64-windows-lgpl.zip.sha512</p>
+</div>
+</section>
+
+<section>
+<h2>主要参考</h2>
+<ul class="small">
+<li><a href="https://ffmpeg.org/security.html">FFmpeg 官方安全公告</a></li>
+<li><a href="https://ubuntu.com/security/CVE-2026-70628">CVE-2026-70628 · Ubuntu</a> · <a href="https://access.redhat.com/security/cve/cve-2026-70629">CVE-2026-70629 · Red Hat</a></li>
+<li><a href="https://access.redhat.com/security/cve/cve-2026-70630">CVE-2026-70630 · Red Hat</a> · <a href="https://github.com/advisories/GHSA-5f73-3r3j-p8mr">CVE-2026-70631 · GitHub Advisory</a></li>
+<li><a href="https://github.com/electron/electron/security/advisories">Electron Security Advisories</a> · <a href="https://github.com/parallax/jsPDF/security/advisories/GHSA-wfv2-pwc8-crg5">jsPDF Advisory</a> · <a href="https://github.com/advisories/GHSA-hp3w-g68c-fv3c">sprintf-js Advisory</a></li>
+</ul>
+</section>
+
+<footer>唱歌笔记桌面版 · 安全审核报告 · 2026-10-16 · 本页可通过浏览器打印为 PDF</footer>
+</main>
+</body>
+</html>
+

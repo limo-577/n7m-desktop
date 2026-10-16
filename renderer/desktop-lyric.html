@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bHha2zvAg2zd2gdcP4UQVLOJuNiTGDt0Jo662t7P8dQ='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; object-src 'none'; base-uri 'none'; frame-src 'none'; form-action 'none'" />
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%; background: transparent;
+    overflow: hidden; -webkit-user-select: none; user-select: none;
+  }
+  #outer {
+    -webkit-app-region: drag;
+    position: relative;
+    height: 100%; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+    box-sizing: border-box;
+  }
+  /* wrap 用 inline-flex 让自己的尺寸跟着内容走，底板各层铺满 wrap，天然和内容同步缩放 */
+  #wrap {
+    --r: 11px;                 /* 圆角，由 bgRadius 控制 */
+    --glow: rgba(255,255,255,.45);
+    position: relative;
+    display: inline-flex; align-items: stretch; justify-content: center;
+    max-width: 100%;
+  }
+
+  /* ===== 底板：透明彩色玻璃，铺满整条（播放控制 + 分隔线 + 歌词） ===== */
+  #bg, #sheen, #rim {
+    position: absolute; inset: 0; border-radius: var(--r);
+    pointer-events: none;
+    transition: background .15s, opacity .15s, border-radius .15s;
+  }
+  /* 半透明玻璃底，不要太黑 */
+  #bg { background: rgba(30, 26, 40, .38); opacity: 1; }
+  /* 顶部柔和玻璃高光 */
+  #sheen {
+    background: linear-gradient(180deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.10) 30%, rgba(255,255,255,.025) 65%, rgba(255,255,255,0) 100%);
+    opacity: 1;
+  }
+  /* 玻璃边缘 + 内部反光 + 柔和阴影 */
+  #rim {
+    border: 1px solid rgba(255,255,255,.28);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.42), inset 0 -1px 0 rgba(0,0,0,.12), 0 8px 24px -8px rgba(0,0,0,.38);
+    opacity: 1;
+  }
+
+  /* ===== 左侧：播放控制面板 ===== */
+  #controls {
+    -webkit-app-region: no-drag;
+    position: relative;
+    display: flex; align-items: center; gap: 2px;
+    padding: 0 6px 0 10px;
+    flex-shrink: 0;
+  }
+  #controls button {
+    -webkit-app-region: no-drag;
+    width: 26px; height: 26px; border-radius: 50%;
+    border: none; background: transparent; color: rgba(255,255,255,.85);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; padding: 0; flex-shrink: 0;
+    transition: background .15s, transform .1s, color .15s;
+  }
+  #controls button svg { width: 14px; height: 14px; fill: currentColor; }
+  #controls button:hover { background: rgba(255,255,255,.16); color: #fff; }
+  #controls button:active { transform: scale(.9); }
+  #play-btn svg { width: 15px; height: 15px; }
+  body.pill-light #controls button { color: rgba(0,0,0,.62); }
+  body.pill-light #controls button:hover { background: rgba(0,0,0,.08); color: rgba(0,0,0,.9); }
+
+  /* ===== 中间分隔线 ===== */
+  #divider {
+    width: 1px; align-self: stretch; margin: 8px 0;
+    background: rgba(255,255,255,.22); flex-shrink: 0;
+  }
+  body.pill-light #divider { background: rgba(0,0,0,.14); }
+
+  /* ===== 右侧：歌词 ===== */
+  /* ===== 文字：底层(未唱) + 上层(已唱，按进度从左到右填充) ===== */
+  #text {
+    position: relative;
+    font-family: -apple-system,"PingFang SC","Microsoft Yahei","Hiragino Sans GB",sans-serif;
+    font-weight: 700; letter-spacing: .02em;
+    white-space: nowrap;
+    padding: 9px 26px 9px 20px;
+    font-size: 17px;
+    opacity: 1;
+    transition: font-size .15s, opacity .15s;
+    display: flex; align-items: center;
+  }
+  #line { display: grid; }
+  #line > span { grid-area: 1 / 1; white-space: pre; }
+  #base {
+    color: rgba(255,255,255,.55);
+    text-shadow: 0 1px 4px rgba(0,0,0,.55);
+  }
+  #fill {
+    color: #FFFFFF;
+    text-shadow: 0 0 12px var(--glow), 0 1px 4px rgba(0,0,0,.5);
+    clip-path: inset(0 0 0 0);
+    transition: clip-path .09s linear, color .15s;
+  }
+  /* 浅色底板：文字阴影换成浅色，避免脏边 */
+  body.pill-light #base { text-shadow: 0 1px 2px rgba(255,255,255,.55); }
+  body.pill-light #fill { text-shadow: 0 1px 2px rgba(255,255,255,.5), 0 0 10px var(--glow); }
+  #line.enter { animation: lineIn .22s ease-out; }
+  @keyframes lineIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+  /* ===== 右上角：锁定穿透 / 关闭（悬停才出现，锁定后整体隐藏） ===== */
+  #toolbar {
+    -webkit-app-region: no-drag;
+    position: absolute; top: -5px; right: -5px;
+    display: flex; gap: 4px;
+    opacity: 0; transition: opacity .15s;
+    z-index: 5;
+  }
+  #outer:hover #toolbar { opacity: 1; }
+  #toolbar button {
+    -webkit-app-region: no-drag;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: rgba(30,26,40,.78); color: #fff;
+    border: 1px solid rgba(255,255,255,.28);
+    font-size: 10px; line-height: 1; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s;
+  }
+  #toolbar button:hover { transform: scale(1.12); }
+  #lock-btn.on { background: rgba(91,110,225,.85); }
+
+  /* ===== 锁定穿透状态：整条工具栏/控制/分隔线都收起，只留一把锁图标 ===== */
+  body.pt-locked #controls,
+  body.pt-locked #divider,
+  body.pt-locked #toolbar { display: none !important; }
+  /* 关键：#outer 平时整个是拖动区(-webkit-app-region:drag)，这类区域即使调用了
+     setIgnoreMouseEvents 也会被系统当成"可拖动标题栏"优先处理，鼠标穿透不过去。
+     锁定穿透时必须把它整体改成 no-drag，穿透才会真正生效。 */
+  body.pt-locked #outer, body.pt-locked #wrap { -webkit-app-region: no-drag; }
+  /* 解锁按钮：和锁定按钮同一个位置、同样大小，只是一个图标，不带文字提示 */
+  #unlock-btn {
+    -webkit-app-region: no-drag;
+    display: none;
+    position: absolute; top: -5px; right: -5px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: rgba(30,26,40,.78); color: #fff;
+    border: 1px solid rgba(255,255,255,.28);
+    font-size: 10px; cursor: pointer;
+    align-items: center; justify-content: center;
+    z-index: 6;
+  }
+  body.pt-locked #unlock-btn { display: flex; }
+  body.locked #outer { -webkit-app-region: no-drag; }
+</style>
+</head>
+<body>
+  <div id="outer">
+    <div id="wrap">
+      <div id="bg"></div>
+      <div id="sheen"></div>
+      <div id="rim"></div>
+
+      <div id="controls">
+        <button id="prev-btn" title="上一曲">
+          <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM20 6L9 12l11 6z"/></svg>
+        </button>
+        <button id="play-btn" title="播放/暂停">
+          <svg id="ic-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="ic-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="next-btn" title="下一曲">
+          <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM4 6l11 6L4 18z"/></svg>
+        </button>
+      </div>
+
+      <div id="divider"></div>
+
+      <div id="text"><div id="line"><span id="base">等待播放…</span><span id="fill" aria-hidden="true">等待播放…</span></div></div>
+
+      <div id="toolbar">
+        <button id="lock-btn" title="锁定桌面歌词并开启鼠标穿透">🔓</button>
+        <button id="close-btn" title="关闭桌面歌词">✕</button>
+      </div>
+
+      <button id="unlock-btn" title="解锁桌面歌词">🔒</button>
+    </div>
+  </div>
+<script>
+  var wrapEl = document.getElementById('wrap');
+  var textEl = document.getElementById('text');
+  var lineEl = document.getElementById('line');
+  var baseEl = document.getElementById('base');
+  var fillEl = document.getElementById('fill');
+  var bgEl   = document.getElementById('bg');
+  var sheenEl = document.getElementById('sheen');
+  var rimEl   = document.getElementById('rim');
+  var lockBtn = document.getElementById('lock-btn');
+  var unlockBtn = document.getElementById('unlock-btn');
+  var closeBtn = document.getElementById('close-btn');
+  var prevBtn = document.getElementById('prev-btn');
+  var playBtn = document.getElementById('play-btn');
+  var nextBtn = document.getElementById('next-btn');
+  var icPlay = document.getElementById('ic-play');
+  var icPause = document.getElementById('ic-pause');
+
+  var lastText = null;
+  var isLocked = false;      // 锁定穿透状态
+  var pointerIgnored = null; // 当前是否已经把鼠标事件设为穿透（避免重复发送）
+
+  function bridgeSend(channel, payload){
+    if (window.desktopLyricBridge) window.desktopLyricBridge.send(channel, payload);
+  }
+
+  function toRgba(color, a){
+    // 支持 #rgb / #rrggbb，其他格式原样返回（不带透明度）
+    var m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(String(color).trim());
+    if (!m) return color;
+    var h = m[1]; if (h.length === 3) h = h.split('').map(function(c){return c+c;}).join('');
+    var n = parseInt(h, 16);
+    return 'rgba(' + ((n>>16)&255) + ',' + ((n>>8)&255) + ',' + (n&255) + ',' + a + ')';
+  }
+
+  function setText(t){
+    if (t === lastText) return;
+    lastText = t;
+    baseEl.textContent = t; fillEl.textContent = t;
+    // 换行时淡入一下
+    lineEl.classList.remove('enter'); void lineEl.offsetWidth; lineEl.classList.add('enter');
+  }
+  function setProgress(p){
+    // p: 0~1 = 按进度从左到右填充；null = 整行直接用已唱颜色显示
+    if (p == null || isNaN(p)) { fillEl.style.clipPath = 'inset(0 0 0 0)'; return; }
+    p = Math.max(0, Math.min(1, p));
+    fillEl.style.clipPath = 'inset(0 ' + ((1 - p) * 100).toFixed(2) + '% 0 0)';
+  }
+  function setPlayingIcon(playing){
+    icPlay.style.display = playing ? 'none' : '';
+    icPause.style.display = playing ? '' : 'none';
+    playBtn.title = playing ? '暂停' : '播放';
+  }
+
+  function applyPayload(data){
+    if (!data) return;
+    if (typeof data.text === 'string') setText(data.text || '（无歌词）');
+    if ('progress' in data) setProgress(data.progress);
+    if (data.playing != null) setPlayingIcon(!!data.playing);
+    if (data.fontSize != null) textEl.style.fontSize = parseFloat(data.fontSize) + 'px';
+    if (data.textOpacity != null) textEl.style.opacity = data.textOpacity;
+    if (data.opacity != null) textEl.style.opacity = data.opacity;   // 兼容旧字段名
+    if (data.baseColor) baseEl.style.color = data.baseColor;          // 未唱颜色
+    if (data.light != null) document.body.classList.toggle('pill-light', !!data.light);
+    var tc = data.textColor || data.color;                           // color 为兼容旧字段名
+    if (tc) { fillEl.style.color = tc; wrapEl.style.setProperty('--glow', toRgba(tc, .5)); }
+    if (data.bgOpacity != null) {
+      var o = parseFloat(data.bgOpacity);
+      bgEl.style.opacity = o;
+      // 高光和边缘随底板浓度一起淡出；底板为 0（完全透明）时整套玻璃效果消失
+      var k = o <= 0 ? 0 : Math.min(1, o * 1.6);
+      sheenEl.style.opacity = k; rimEl.style.opacity = k;
+    }
+    if (data.bgColor) bgEl.style.background = data.bgColor;
+    if (data.bgRadius != null) wrapEl.style.setProperty('--r', parseFloat(data.bgRadius) + 'px');
+    if (data.locked != null) document.body.classList.toggle('locked', !!data.locked);
+  }
+
+  // ===================================================================
+  //  锁定穿透：整个窗口对鼠标不可见（点击会穿透到桌面歌词后面的内容），
+  //  只有右上角这颗"解锁桌面歌词"按钮仍然可以点击。
+  //  真正让窗口"穿透"需要 Electron 主进程调用 win.setIgnoreMouseEvents()，
+  //  这里通过 lyric-set-ignore-mouse 消息请求主进程去做；
+  //  {forward:true} 让主进程在穿透的同时继续把 mousemove 转发进来，
+  //  这样我们才能算出鼠标有没有移到"解锁"按钮上，从而临时取消穿透以便点击它。
+  // ===================================================================
+  function sendIgnore(ignore){
+    if (pointerIgnored === ignore) return;
+    pointerIgnored = ignore;
+    bridgeSend('lyric-set-ignore-mouse', { ignore: ignore, forward: true });
+  }
+  function setLocked(v){
+    isLocked = v;
+    document.body.classList.toggle('pt-locked', v);
+    bridgeSend('lyric-passthrough', { locked: v });
+    if (v){ pointerIgnored = null; sendIgnore(true); }
+    else { pointerIgnored = null; sendIgnore(false); }
+  }
+  document.addEventListener('mousemove', function(e){
+    if (!isLocked) return;
+    const r = unlockBtn.getBoundingClientRect();
+    const over = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+    sendIgnore(!over);
+  });
+
+  lockBtn.addEventListener('click', function(){ setLocked(true); });
+  unlockBtn.addEventListener('click', function(){ setLocked(false); });
+  closeBtn.addEventListener('click', function(){ bridgeSend('lyric-window-close', true); });
+  prevBtn.addEventListener('click', function(){ bridgeSend('lyric-control', { action: 'prev' }); });
+  nextBtn.addEventListener('click', function(){ bridgeSend('lyric-control', { action: 'next' }); });
+  playBtn.addEventListener('click', function(){ bridgeSend('lyric-control', { action: 'toggle' }); });
+
+  if (window.desktopLyricBridge) {
+    window.desktopLyricBridge.on('lyric-update', applyPayload);
+  }
+</script>
+</body>
+</html>

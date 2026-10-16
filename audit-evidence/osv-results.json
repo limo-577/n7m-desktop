@@ -1,0 +1,2062 @@
+{
+  "checkedAt": "2026-10-16T17:18:32.816Z",
+  "report": [
+    {
+      "package": {
+        "name": "@babel/runtime",
+        "ecosystem": "npm"
+      },
+      "version": "7.29.10"
+    },
+    {
+      "package": {
+        "name": "@electron-internal/extract-zip",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.5"
+    },
+    {
+      "package": {
+        "name": "@electron/asar",
+        "ecosystem": "npm"
+      },
+      "version": "3.4.1"
+    },
+    {
+      "package": {
+        "name": "balanced-match",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "brace-expansion",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.21"
+    },
+    {
+      "package": {
+        "name": "minimatch",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.5"
+    },
+    {
+      "package": {
+        "name": "@electron/fuses",
+        "ecosystem": "npm"
+      },
+      "version": "1.8.0"
+    },
+    {
+      "package": {
+        "name": "fs-extra",
+        "ecosystem": "npm"
+      },
+      "version": "9.1.0"
+    },
+    {
+      "package": {
+        "name": "@electron/get",
+        "ecosystem": "npm"
+      },
+      "version": "5.1.0"
+    },
+    {
+      "package": {
+        "name": "@electron/notarize",
+        "ecosystem": "npm"
+      },
+      "version": "2.5.0"
+    },
+    {
+      "package": {
+        "name": "@electron/osx-sign",
+        "ecosystem": "npm"
+      },
+      "version": "1.3.3"
+    },
+    {
+      "package": {
+        "name": "isbinaryfile",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.10"
+    },
+    {
+      "package": {
+        "name": "@electron/rebuild",
+        "ecosystem": "npm"
+      },
+      "version": "4.2.1"
+    },
+    {
+      "package": {
+        "name": "@electron/universal",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.3"
+    },
+    {
+      "package": {
+        "name": "brace-expansion",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.7"
+    },
+    {
+      "package": {
+        "name": "fs-extra",
+        "ecosystem": "npm"
+      },
+      "version": "11.4.1"
+    },
+    {
+      "package": {
+        "name": "minimatch",
+        "ecosystem": "npm"
+      },
+      "version": "9.0.9"
+    },
+    {
+      "package": {
+        "name": "@electron/windows-sign",
+        "ecosystem": "npm"
+      },
+      "version": "1.2.2"
+    },
+    {
+      "package": {
+        "name": "@isaacs/fs-minipass",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.1"
+    },
+    {
+      "package": {
+        "name": "@malept/cross-spawn-promise",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "package": {
+        "name": "@malept/flatpak-bundler",
+        "ecosystem": "npm"
+      },
+      "version": "0.4.0"
+    },
+    {
+      "package": {
+        "name": "@noble/hashes",
+        "ecosystem": "npm"
+      },
+      "version": "2.4.0"
+    },
+    {
+      "package": {
+        "name": "@peculiar/asn1-schema",
+        "ecosystem": "npm"
+      },
+      "version": "2.10.0"
+    },
+    {
+      "package": {
+        "name": "@peculiar/json-schema",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.12"
+    },
+    {
+      "package": {
+        "name": "@peculiar/utils",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.3"
+    },
+    {
+      "package": {
+        "name": "@peculiar/webcrypto",
+        "ecosystem": "npm"
+      },
+      "version": "1.7.1"
+    },
+    {
+      "package": {
+        "name": "@sindresorhus/is",
+        "ecosystem": "npm"
+      },
+      "version": "4.6.0"
+    },
+    {
+      "package": {
+        "name": "@szmarczak/http-timer",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.6"
+    },
+    {
+      "package": {
+        "name": "@types/cacheable-request",
+        "ecosystem": "npm"
+      },
+      "version": "6.0.3"
+    },
+    {
+      "package": {
+        "name": "@types/debug",
+        "ecosystem": "npm"
+      },
+      "version": "4.1.13"
+    },
+    {
+      "package": {
+        "name": "@types/fs-extra",
+        "ecosystem": "npm"
+      },
+      "version": "9.0.13"
+    },
+    {
+      "package": {
+        "name": "@types/http-cache-semantics",
+        "ecosystem": "npm"
+      },
+      "version": "4.2.0"
+    },
+    {
+      "package": {
+        "name": "@types/keyv",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.4"
+    },
+    {
+      "package": {
+        "name": "@types/ms",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.0"
+    },
+    {
+      "package": {
+        "name": "@types/node",
+        "ecosystem": "npm"
+      },
+      "version": "24.19.1"
+    },
+    {
+      "package": {
+        "name": "@types/pako",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.4"
+    },
+    {
+      "package": {
+        "name": "@types/raf",
+        "ecosystem": "npm"
+      },
+      "version": "3.4.3"
+    },
+    {
+      "package": {
+        "name": "@types/responselike",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.3"
+    },
+    {
+      "package": {
+        "name": "@types/trusted-types",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.7"
+    },
+    {
+      "package": {
+        "name": "@xmldom/xmldom",
+        "ecosystem": "npm"
+      },
+      "version": "0.8.15"
+    },
+    {
+      "package": {
+        "name": "abbrev",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "agent-base",
+        "ecosystem": "npm"
+      },
+      "version": "7.1.4"
+    },
+    {
+      "package": {
+        "name": "ajv",
+        "ecosystem": "npm"
+      },
+      "version": "8.20.0"
+    },
+    {
+      "package": {
+        "name": "ansi-regex",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.1"
+    },
+    {
+      "package": {
+        "name": "ansi-styles",
+        "ecosystem": "npm"
+      },
+      "version": "4.3.0"
+    },
+    {
+      "package": {
+        "name": "app-builder-lib",
+        "ecosystem": "npm"
+      },
+      "version": "26.15.3"
+    },
+    {
+      "package": {
+        "name": "@electron/get",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "fs-extra",
+        "ecosystem": "npm"
+      },
+      "version": "8.1.0"
+    },
+    {
+      "package": {
+        "name": "semver",
+        "ecosystem": "npm"
+      },
+      "version": "6.3.1"
+    },
+    {
+      "package": {
+        "name": "ci-info",
+        "ecosystem": "npm"
+      },
+      "version": "4.3.1"
+    },
+    {
+      "package": {
+        "name": "env-paths",
+        "ecosystem": "npm"
+      },
+      "version": "2.2.1"
+    },
+    {
+      "package": {
+        "name": "jsonfile",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "semver",
+        "ecosystem": "npm"
+      },
+      "version": "7.7.4"
+    },
+    {
+      "package": {
+        "name": "universalify",
+        "ecosystem": "npm"
+      },
+      "version": "0.1.2"
+    },
+    {
+      "package": {
+        "name": "argparse",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "asn1js",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.10"
+    },
+    {
+      "package": {
+        "name": "async",
+        "ecosystem": "npm"
+      },
+      "version": "3.2.6"
+    },
+    {
+      "package": {
+        "name": "async-exit-hook",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "asynckit",
+        "ecosystem": "npm"
+      },
+      "version": "0.4.0"
+    },
+    {
+      "package": {
+        "name": "at-least-node",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "aws4",
+        "ecosystem": "npm"
+      },
+      "version": "1.13.2"
+    },
+    {
+      "package": {
+        "name": "balanced-match",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.4"
+    },
+    {
+      "package": {
+        "name": "base64-arraybuffer",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "base64-js",
+        "ecosystem": "npm"
+      },
+      "version": "1.5.1"
+    },
+    {
+      "package": {
+        "name": "bluebird",
+        "ecosystem": "npm"
+      },
+      "version": "3.7.2"
+    },
+    {
+      "package": {
+        "name": "boolean",
+        "ecosystem": "npm"
+      },
+      "version": "3.2.0"
+    },
+    {
+      "package": {
+        "name": "brace-expansion",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.12"
+    },
+    {
+      "package": {
+        "name": "buffer-from",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.2"
+    },
+    {
+      "package": {
+        "name": "builder-util",
+        "ecosystem": "npm"
+      },
+      "version": "26.15.3"
+    },
+    {
+      "package": {
+        "name": "builder-util-runtime",
+        "ecosystem": "npm"
+      },
+      "version": "9.7.0"
+    },
+    {
+      "package": {
+        "name": "bytestreamjs",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "cacheable-lookup",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.4"
+    },
+    {
+      "package": {
+        "name": "cacheable-request",
+        "ecosystem": "npm"
+      },
+      "version": "7.0.4"
+    },
+    {
+      "package": {
+        "name": "call-bind-apply-helpers",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "canvg",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.11"
+    },
+    {
+      "package": {
+        "name": "chalk",
+        "ecosystem": "npm"
+      },
+      "version": "4.1.2"
+    },
+    {
+      "package": {
+        "name": "chownr",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "chromium-pickle-js",
+        "ecosystem": "npm"
+      },
+      "version": "0.2.0"
+    },
+    {
+      "package": {
+        "name": "ci-info",
+        "ecosystem": "npm"
+      },
+      "version": "4.4.0"
+    },
+    {
+      "package": {
+        "name": "cliui",
+        "ecosystem": "npm"
+      },
+      "version": "8.0.1"
+    },
+    {
+      "package": {
+        "name": "clone-response",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.3"
+    },
+    {
+      "package": {
+        "name": "color-convert",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "color-name",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.4"
+    },
+    {
+      "package": {
+        "name": "combined-stream",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.8"
+    },
+    {
+      "package": {
+        "name": "commander",
+        "ecosystem": "npm"
+      },
+      "version": "5.1.0"
+    },
+    {
+      "package": {
+        "name": "compare-version",
+        "ecosystem": "npm"
+      },
+      "version": "0.1.2"
+    },
+    {
+      "package": {
+        "name": "concat-map",
+        "ecosystem": "npm"
+      },
+      "version": "0.0.1"
+    },
+    {
+      "package": {
+        "name": "core-js",
+        "ecosystem": "npm"
+      },
+      "version": "3.50.0"
+    },
+    {
+      "package": {
+        "name": "core-util-is",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.3"
+    },
+    {
+      "package": {
+        "name": "cross-dirname",
+        "ecosystem": "npm"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "package": {
+        "name": "cross-spawn",
+        "ecosystem": "npm"
+      },
+      "version": "7.0.6"
+    },
+    {
+      "package": {
+        "name": "isexe",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "package": {
+        "name": "which",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.2"
+    },
+    {
+      "package": {
+        "name": "css-line-break",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.0"
+    },
+    {
+      "package": {
+        "name": "debug",
+        "ecosystem": "npm"
+      },
+      "version": "4.4.3"
+    },
+    {
+      "package": {
+        "name": "decompress-response",
+        "ecosystem": "npm"
+      },
+      "version": "6.0.0"
+    },
+    {
+      "package": {
+        "name": "mimic-response",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "defer-to-connect",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "define-data-property",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.4"
+    },
+    {
+      "package": {
+        "name": "define-properties",
+        "ecosystem": "npm"
+      },
+      "version": "1.2.1"
+    },
+    {
+      "package": {
+        "name": "delayed-stream",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "detect-node",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.0"
+    },
+    {
+      "package": {
+        "name": "dir-compare",
+        "ecosystem": "npm"
+      },
+      "version": "4.2.0"
+    },
+    {
+      "package": {
+        "name": "dmg-builder",
+        "ecosystem": "npm"
+      },
+      "version": "26.15.3"
+    },
+    {
+      "package": {
+        "name": "dompurify",
+        "ecosystem": "npm"
+      },
+      "version": "3.4.16"
+    },
+    {
+      "package": {
+        "name": "dotenv",
+        "ecosystem": "npm"
+      },
+      "version": "16.6.1"
+    },
+    {
+      "package": {
+        "name": "dotenv-expand",
+        "ecosystem": "npm"
+      },
+      "version": "11.0.7"
+    },
+    {
+      "package": {
+        "name": "dunder-proto",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "duplexer2",
+        "ecosystem": "npm"
+      },
+      "version": "0.1.4"
+    },
+    {
+      "package": {
+        "name": "readable-stream",
+        "ecosystem": "npm"
+      },
+      "version": "2.3.8"
+    },
+    {
+      "package": {
+        "name": "safe-buffer",
+        "ecosystem": "npm"
+      },
+      "version": "5.1.2"
+    },
+    {
+      "package": {
+        "name": "string_decoder",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.1"
+    },
+    {
+      "package": {
+        "name": "ejs",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.10"
+    },
+    {
+      "package": {
+        "name": "electron",
+        "ecosystem": "npm"
+      },
+      "version": "44.5.1"
+    },
+    {
+      "package": {
+        "name": "electron-builder",
+        "ecosystem": "npm"
+      },
+      "version": "26.15.3"
+    },
+    {
+      "package": {
+        "name": "electron-builder-squirrel-windows",
+        "ecosystem": "npm"
+      },
+      "version": "26.15.3"
+    },
+    {
+      "package": {
+        "name": "electron-publish",
+        "ecosystem": "npm"
+      },
+      "version": "26.15.3"
+    },
+    {
+      "package": {
+        "name": "electron-winstaller",
+        "ecosystem": "npm"
+      },
+      "version": "5.4.0"
+    },
+    {
+      "package": {
+        "name": "fs-extra",
+        "ecosystem": "npm"
+      },
+      "version": "7.0.1"
+    },
+    {
+      "package": {
+        "name": "emoji-regex",
+        "ecosystem": "npm"
+      },
+      "version": "8.0.0"
+    },
+    {
+      "package": {
+        "name": "end-of-stream",
+        "ecosystem": "npm"
+      },
+      "version": "1.4.5"
+    },
+    {
+      "package": {
+        "name": "env-paths",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "err-code",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.3"
+    },
+    {
+      "package": {
+        "name": "es-define-property",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "es-errors",
+        "ecosystem": "npm"
+      },
+      "version": "1.3.0"
+    },
+    {
+      "package": {
+        "name": "es-object-atoms",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.2"
+    },
+    {
+      "package": {
+        "name": "es-set-tostringtag",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.0"
+    },
+    {
+      "package": {
+        "name": "es6-error",
+        "ecosystem": "npm"
+      },
+      "version": "4.1.1"
+    },
+    {
+      "package": {
+        "name": "escalade",
+        "ecosystem": "npm"
+      },
+      "version": "3.2.0"
+    },
+    {
+      "package": {
+        "name": "escape-string-regexp",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "exponential-backoff",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.3"
+    },
+    {
+      "package": {
+        "name": "fast-deep-equal",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.3"
+    },
+    {
+      "package": {
+        "name": "fast-png",
+        "ecosystem": "npm"
+      },
+      "version": "6.4.0"
+    },
+    {
+      "package": {
+        "name": "fast-uri",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.8"
+    },
+    {
+      "package": {
+        "name": "fdir",
+        "ecosystem": "npm"
+      },
+      "version": "6.5.0"
+    },
+    {
+      "package": {
+        "name": "fflate",
+        "ecosystem": "npm"
+      },
+      "version": "0.8.3"
+    },
+    {
+      "package": {
+        "name": "filelist",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.6"
+    },
+    {
+      "package": {
+        "name": "minimatch",
+        "ecosystem": "npm"
+      },
+      "version": "5.1.9"
+    },
+    {
+      "package": {
+        "name": "form-data",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.6"
+    },
+    {
+      "package": {
+        "name": "fs-extra",
+        "ecosystem": "npm"
+      },
+      "version": "10.1.0"
+    },
+    {
+      "package": {
+        "name": "fs.realpath",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "function-bind",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.2"
+    },
+    {
+      "package": {
+        "name": "get-caller-file",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.5"
+    },
+    {
+      "package": {
+        "name": "get-intrinsic",
+        "ecosystem": "npm"
+      },
+      "version": "1.3.0"
+    },
+    {
+      "package": {
+        "name": "get-proto",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "get-stream",
+        "ecosystem": "npm"
+      },
+      "version": "5.2.0"
+    },
+    {
+      "package": {
+        "name": "glob",
+        "ecosystem": "npm"
+      },
+      "version": "7.2.3"
+    },
+    {
+      "package": {
+        "name": "global-agent",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "globalthis",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.4"
+    },
+    {
+      "package": {
+        "name": "gopd",
+        "ecosystem": "npm"
+      },
+      "version": "1.2.0"
+    },
+    {
+      "package": {
+        "name": "got",
+        "ecosystem": "npm"
+      },
+      "version": "11.8.6"
+    },
+    {
+      "package": {
+        "name": "graceful-fs",
+        "ecosystem": "npm"
+      },
+      "version": "4.2.11"
+    },
+    {
+      "package": {
+        "name": "has-flag",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "has-property-descriptors",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "has-symbols",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "package": {
+        "name": "has-tostringtag",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "hasown",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.4"
+    },
+    {
+      "package": {
+        "name": "hosted-git-info",
+        "ecosystem": "npm"
+      },
+      "version": "4.1.0"
+    },
+    {
+      "package": {
+        "name": "html2canvas",
+        "ecosystem": "npm"
+      },
+      "version": "1.4.1"
+    },
+    {
+      "package": {
+        "name": "html2canvas-pro",
+        "ecosystem": "npm"
+      },
+      "version": "2.5.2"
+    },
+    {
+      "package": {
+        "name": "http-cache-semantics",
+        "ecosystem": "npm"
+      },
+      "version": "4.3.0"
+    },
+    {
+      "package": {
+        "name": "http-proxy-agent",
+        "ecosystem": "npm"
+      },
+      "version": "7.0.2"
+    },
+    {
+      "package": {
+        "name": "http2-wrapper",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.3"
+    },
+    {
+      "package": {
+        "name": "https-proxy-agent",
+        "ecosystem": "npm"
+      },
+      "version": "7.0.6"
+    },
+    {
+      "package": {
+        "name": "inflight",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.6"
+    },
+    {
+      "package": {
+        "name": "inherits",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.4"
+    },
+    {
+      "package": {
+        "name": "iobuffer",
+        "ecosystem": "npm"
+      },
+      "version": "5.4.0"
+    },
+    {
+      "package": {
+        "name": "is-fullwidth-code-point",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "isarray",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "isbinaryfile",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.7"
+    },
+    {
+      "package": {
+        "name": "isexe",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.5"
+    },
+    {
+      "package": {
+        "name": "jake",
+        "ecosystem": "npm"
+      },
+      "version": "10.9.4"
+    },
+    {
+      "package": {
+        "name": "jiti",
+        "ecosystem": "npm"
+      },
+      "version": "2.7.0"
+    },
+    {
+      "package": {
+        "name": "js-yaml",
+        "ecosystem": "npm"
+      },
+      "version": "4.3.2"
+    },
+    {
+      "package": {
+        "name": "json-buffer",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.1"
+    },
+    {
+      "package": {
+        "name": "json-schema-traverse",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "json-stringify-safe",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.1"
+    },
+    {
+      "package": {
+        "name": "json5",
+        "ecosystem": "npm"
+      },
+      "version": "2.2.3"
+    },
+    {
+      "package": {
+        "name": "jsonfile",
+        "ecosystem": "npm"
+      },
+      "version": "6.2.1"
+    },
+    {
+      "package": {
+        "name": "jspdf",
+        "ecosystem": "npm"
+      },
+      "version": "4.2.1"
+    },
+    {
+      "package": {
+        "name": "keyv",
+        "ecosystem": "npm"
+      },
+      "version": "4.5.4"
+    },
+    {
+      "package": {
+        "name": "lazy-val",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.5"
+    },
+    {
+      "package": {
+        "name": "lodash",
+        "ecosystem": "npm"
+      },
+      "version": "4.18.1"
+    },
+    {
+      "package": {
+        "name": "lowercase-keys",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "package": {
+        "name": "lru-cache",
+        "ecosystem": "npm"
+      },
+      "version": "6.0.0"
+    },
+    {
+      "package": {
+        "name": "matcher",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "math-intrinsics",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.0"
+    },
+    {
+      "package": {
+        "name": "mime",
+        "ecosystem": "npm"
+      },
+      "version": "2.6.0"
+    },
+    {
+      "package": {
+        "name": "mime-db",
+        "ecosystem": "npm"
+      },
+      "version": "1.52.0"
+    },
+    {
+      "package": {
+        "name": "mime-types",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.35"
+    },
+    {
+      "package": {
+        "name": "mimic-response",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "minimatch",
+        "ecosystem": "npm"
+      },
+      "version": "10.2.6"
+    },
+    {
+      "package": {
+        "name": "minimist",
+        "ecosystem": "npm"
+      },
+      "version": "1.2.8"
+    },
+    {
+      "package": {
+        "name": "minipass",
+        "ecosystem": "npm"
+      },
+      "version": "7.1.3"
+    },
+    {
+      "package": {
+        "name": "minizlib",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "mkdirp",
+        "ecosystem": "npm"
+      },
+      "version": "0.5.6"
+    },
+    {
+      "package": {
+        "name": "ms",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.3"
+    },
+    {
+      "package": {
+        "name": "node-abi",
+        "ecosystem": "npm"
+      },
+      "version": "4.36.0"
+    },
+    {
+      "package": {
+        "name": "node-api-version",
+        "ecosystem": "npm"
+      },
+      "version": "0.2.1"
+    },
+    {
+      "package": {
+        "name": "node-gyp",
+        "ecosystem": "npm"
+      },
+      "version": "12.4.0"
+    },
+    {
+      "package": {
+        "name": "isexe",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "undici",
+        "ecosystem": "npm"
+      },
+      "version": "6.29.1"
+    },
+    {
+      "package": {
+        "name": "which",
+        "ecosystem": "npm"
+      },
+      "version": "6.0.1"
+    },
+    {
+      "package": {
+        "name": "node-int64",
+        "ecosystem": "npm"
+      },
+      "version": "0.4.0"
+    },
+    {
+      "package": {
+        "name": "nopt",
+        "ecosystem": "npm"
+      },
+      "version": "9.0.0"
+    },
+    {
+      "package": {
+        "name": "normalize-url",
+        "ecosystem": "npm"
+      },
+      "version": "6.1.0"
+    },
+    {
+      "package": {
+        "name": "object-keys",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.1"
+    },
+    {
+      "package": {
+        "name": "once",
+        "ecosystem": "npm"
+      },
+      "version": "1.4.0"
+    },
+    {
+      "package": {
+        "name": "p-cancelable",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.1"
+    },
+    {
+      "package": {
+        "name": "p-limit",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "pako",
+        "ecosystem": "npm"
+      },
+      "version": "2.2.0"
+    },
+    {
+      "package": {
+        "name": "path-is-absolute",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "path-key",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.1"
+    },
+    {
+      "package": {
+        "name": "pe-library",
+        "ecosystem": "npm"
+      },
+      "version": "0.4.1"
+    },
+    {
+      "package": {
+        "name": "performance-now",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.0"
+    },
+    {
+      "package": {
+        "name": "picocolors",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.1"
+    },
+    {
+      "package": {
+        "name": "picomatch",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.7"
+    },
+    {
+      "package": {
+        "name": "pkijs",
+        "ecosystem": "npm"
+      },
+      "version": "3.4.1"
+    },
+    {
+      "package": {
+        "name": "@noble/hashes",
+        "ecosystem": "npm"
+      },
+      "version": "1.8.0"
+    },
+    {
+      "package": {
+        "name": "plist",
+        "ecosystem": "npm"
+      },
+      "version": "3.1.0"
+    },
+    {
+      "package": {
+        "name": "postject",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0-alpha.6"
+    },
+    {
+      "package": {
+        "name": "commander",
+        "ecosystem": "npm"
+      },
+      "version": "9.5.0"
+    },
+    {
+      "package": {
+        "name": "proc-log",
+        "ecosystem": "npm"
+      },
+      "version": "6.1.0"
+    },
+    {
+      "package": {
+        "name": "process-nextick-args",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "progress",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.3"
+    },
+    {
+      "package": {
+        "name": "promise-retry",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "proper-lockfile",
+        "ecosystem": "npm"
+      },
+      "version": "4.1.2"
+    },
+    {
+      "package": {
+        "name": "pump",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.4"
+    },
+    {
+      "package": {
+        "name": "pvtsutils",
+        "ecosystem": "npm"
+      },
+      "version": "1.3.6"
+    },
+    {
+      "package": {
+        "name": "pvutils",
+        "ecosystem": "npm"
+      },
+      "version": "1.2.0"
+    },
+    {
+      "package": {
+        "name": "quick-lru",
+        "ecosystem": "npm"
+      },
+      "version": "5.1.1"
+    },
+    {
+      "package": {
+        "name": "raf",
+        "ecosystem": "npm"
+      },
+      "version": "3.4.1"
+    },
+    {
+      "package": {
+        "name": "read-binary-file-arch",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.6"
+    },
+    {
+      "package": {
+        "name": "regenerator-runtime",
+        "ecosystem": "npm"
+      },
+      "version": "0.13.11"
+    },
+    {
+      "package": {
+        "name": "require-directory",
+        "ecosystem": "npm"
+      },
+      "version": "2.1.1"
+    },
+    {
+      "package": {
+        "name": "require-from-string",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.2"
+    },
+    {
+      "package": {
+        "name": "resedit",
+        "ecosystem": "npm"
+      },
+      "version": "1.7.2"
+    },
+    {
+      "package": {
+        "name": "resolve-alpn",
+        "ecosystem": "npm"
+      },
+      "version": "1.2.1"
+    },
+    {
+      "package": {
+        "name": "responselike",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "retry",
+        "ecosystem": "npm"
+      },
+      "version": "0.12.0"
+    },
+    {
+      "package": {
+        "name": "rgbcolor",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.1"
+    },
+    {
+      "package": {
+        "name": "rimraf",
+        "ecosystem": "npm"
+      },
+      "version": "2.6.3"
+    },
+    {
+      "package": {
+        "name": "roarr",
+        "ecosystem": "npm"
+      },
+      "version": "2.15.4"
+    },
+    {
+      "package": {
+        "name": "sanitize-filename",
+        "ecosystem": "npm"
+      },
+      "version": "1.6.4"
+    },
+    {
+      "package": {
+        "name": "sax",
+        "ecosystem": "npm"
+      },
+      "version": "1.6.1"
+    },
+    {
+      "package": {
+        "name": "semver",
+        "ecosystem": "npm"
+      },
+      "version": "7.8.5"
+    },
+    {
+      "package": {
+        "name": "semver-compare",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "serialize-error",
+        "ecosystem": "npm"
+      },
+      "version": "7.0.1"
+    },
+    {
+      "package": {
+        "name": "shebang-command",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "package": {
+        "name": "shebang-regex",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.0"
+    },
+    {
+      "package": {
+        "name": "signal-exit",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.7"
+    },
+    {
+      "package": {
+        "name": "simple-update-notifier",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.0"
+    },
+    {
+      "package": {
+        "name": "source-map",
+        "ecosystem": "npm"
+      },
+      "version": "0.6.1"
+    },
+    {
+      "package": {
+        "name": "source-map-support",
+        "ecosystem": "npm"
+      },
+      "version": "0.5.21"
+    },
+    {
+      "package": {
+        "name": "stackblur-canvas",
+        "ecosystem": "npm"
+      },
+      "version": "2.7.0"
+    },
+    {
+      "package": {
+        "name": "stat-mode",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.0"
+    },
+    {
+      "package": {
+        "name": "string-width",
+        "ecosystem": "npm"
+      },
+      "version": "4.2.3"
+    },
+    {
+      "package": {
+        "name": "strip-ansi",
+        "ecosystem": "npm"
+      },
+      "version": "6.0.1"
+    },
+    {
+      "package": {
+        "name": "sumchecker",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.1"
+    },
+    {
+      "package": {
+        "name": "supports-color",
+        "ecosystem": "npm"
+      },
+      "version": "7.2.0"
+    },
+    {
+      "package": {
+        "name": "svg-pathdata",
+        "ecosystem": "npm"
+      },
+      "version": "6.0.3"
+    },
+    {
+      "package": {
+        "name": "tar",
+        "ecosystem": "npm"
+      },
+      "version": "7.5.22"
+    },
+    {
+      "package": {
+        "name": "yallist",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.0"
+    },
+    {
+      "package": {
+        "name": "temp",
+        "ecosystem": "npm"
+      },
+      "version": "0.9.4"
+    },
+    {
+      "package": {
+        "name": "temp-file",
+        "ecosystem": "npm"
+      },
+      "version": "3.4.0"
+    },
+    {
+      "package": {
+        "name": "text-segmentation",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.3"
+    },
+    {
+      "package": {
+        "name": "tiny-async-pool",
+        "ecosystem": "npm"
+      },
+      "version": "1.3.0"
+    },
+    {
+      "package": {
+        "name": "semver",
+        "ecosystem": "npm"
+      },
+      "version": "5.7.2"
+    },
+    {
+      "package": {
+        "name": "tinyglobby",
+        "ecosystem": "npm"
+      },
+      "version": "0.2.17"
+    },
+    {
+      "package": {
+        "name": "tmp",
+        "ecosystem": "npm"
+      },
+      "version": "0.2.7"
+    },
+    {
+      "package": {
+        "name": "tmp-promise",
+        "ecosystem": "npm"
+      },
+      "version": "3.0.3"
+    },
+    {
+      "package": {
+        "name": "truncate-utf8-bytes",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "tslib",
+        "ecosystem": "npm"
+      },
+      "version": "2.8.1"
+    },
+    {
+      "package": {
+        "name": "type-fest",
+        "ecosystem": "npm"
+      },
+      "version": "0.13.1"
+    },
+    {
+      "package": {
+        "name": "undici",
+        "ecosystem": "npm"
+      },
+      "version": "7.30.1"
+    },
+    {
+      "package": {
+        "name": "undici-types",
+        "ecosystem": "npm"
+      },
+      "version": "7.24.6"
+    },
+    {
+      "package": {
+        "name": "universalify",
+        "ecosystem": "npm"
+      },
+      "version": "2.0.1"
+    },
+    {
+      "package": {
+        "name": "unzipper",
+        "ecosystem": "npm"
+      },
+      "version": "0.12.5"
+    },
+    {
+      "package": {
+        "name": "fs-extra",
+        "ecosystem": "npm"
+      },
+      "version": "11.3.1"
+    },
+    {
+      "package": {
+        "name": "utf8-byte-length",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.5"
+    },
+    {
+      "package": {
+        "name": "util-deprecate",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "utrie",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "webcrypto-core",
+        "ecosystem": "npm"
+      },
+      "version": "1.9.2"
+    },
+    {
+      "package": {
+        "name": "which",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.0"
+    },
+    {
+      "package": {
+        "name": "wrap-ansi",
+        "ecosystem": "npm"
+      },
+      "version": "7.0.0"
+    },
+    {
+      "package": {
+        "name": "wrappy",
+        "ecosystem": "npm"
+      },
+      "version": "1.0.2"
+    },
+    {
+      "package": {
+        "name": "xmlbuilder",
+        "ecosystem": "npm"
+      },
+      "version": "15.1.1"
+    },
+    {
+      "package": {
+        "name": "y18n",
+        "ecosystem": "npm"
+      },
+      "version": "5.0.8"
+    },
+    {
+      "package": {
+        "name": "yallist",
+        "ecosystem": "npm"
+      },
+      "version": "4.0.0"
+    },
+    {
+      "package": {
+        "name": "yargs",
+        "ecosystem": "npm"
+      },
+      "version": "17.7.3"
+    },
+    {
+      "package": {
+        "name": "yargs-parser",
+        "ecosystem": "npm"
+      },
+      "version": "21.1.1"
+    },
+    {
+      "package": {
+        "name": "yocto-queue",
+        "ecosystem": "npm"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "package": {
+        "name": "sprintf-js",
+        "ecosystem": "npm"
+      },
+      "version": "1.1.3",
+      "vulns": [
+        {
+          "id": "GHSA-hp3w-g68c-fv3c",
+          "modified": "2026-10-06T00:00:08.436043Z"
+        }
+      ]
+    }
+  ]
+}

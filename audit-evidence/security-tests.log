@@ -1,0 +1,22 @@
+
+> singing-notes-desktop@1.0.0 test
+> node --test tests/security.test.js
+
+✔ build process uses patched fetch for the real Electron downloader and rejects hostile responses (324.4233ms)
+✔ CSP hashes and syntax match all inline scripts (7.111ms)
+✔ malformed backup causes zero writes, even after a valid first song (3.911ms)
+✔ special IDs do not change cache prototypes; inherited annotation types are rejected (1.3298ms)
+✔ legacy import compatibility and HTML escaping survive hostile text (2.2851ms)
+✔ IPC rejects same-URL subframes and foreign webContents (2.8508ms)
+✔ permission checks and requests allow only main-document audio (1.9327ms)
+✔ folder boundary rejects traversal, junction escape, wrong extension and size (10.2523ms)
+✔ WAV validator rejects inconsistent header fields (2.0767ms)
+✔ both sprintf copies retain normal formatting and bound floating precision (2.9798ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 466.2452

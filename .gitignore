@@ -1,0 +1,15 @@
+node_modules/
+resources/ffmpeg/ffmpeg.exe
+resources/ffmpeg/*.dll
+dist/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+dist-security-audit/
+__pycache__/
+*.py[cod]
+
+*.exe

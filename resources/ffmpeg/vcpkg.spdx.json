@@ -1,0 +1,230 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "n7m-desktop-minimal-ffmpeg-runtime-8.1.3",
+  "documentNamespace": "https://spdx.org/spdxdocs/n7m-ffmpeg-8.1.3-d4483872-c789-458e-8eb6-415de40dd854",
+  "creationInfo": {
+    "creators": [
+      "Tool: n7m-desktop-ffmpeg-runtime-stager"
+    ],
+    "created": "2026-10-16T15:50:57Z"
+  },
+  "packages": [
+    {
+      "name": "FFmpeg",
+      "versionInfo": "8.1.3",
+      "SPDXID": "SPDXRef-Package-FFmpeg",
+      "downloadLocation": "https://ffmpeg.org/releases/ffmpeg-8.1.3.tar.xz",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LGPL-3.0-or-later",
+      "licenseDeclared": "LGPL-3.0-or-later",
+      "copyrightText": "NOASSERTION",
+      "packageHomePage": "https://ffmpeg.org",
+      "packageFileName": "ffmpeg.exe and FFmpeg shared libraries",
+      "sourceInfo": "GitHub tag archive SHA-512 8c667090bcdc70796caaa8cdc2cf82e57d7c7f6feedcb0ec7251cefd6a0c63b7cad203a86c800d3e2f69ca91255167aa4e631701060b96d576d1a9666ca7aafe; vcpkg overlay 8.1.3#3.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:vcpkg/ffmpeg@8.1.3"
+        }
+      ]
+    },
+    {
+      "name": "LAME",
+      "versionInfo": "3.100",
+      "SPDXID": "SPDXRef-Package-LAME",
+      "downloadLocation": "https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LGPL-2.0-only",
+      "licenseDeclared": "LGPL-2.0-only",
+      "copyrightText": "NOASSERTION",
+      "packageHomePage": "https://lame.sourceforge.io",
+      "packageFileName": "libmp3lame.dll",
+      "sourceInfo": "Source archive SHA-512 0844b9eadb4aacf8000444621451277de365041cc1d97b7f7a589da0b7a23899310afd4e4d81114b9912aa97832621d20588034715573d417b2923948c08634b; vcpkg overlay 3.100#17.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:vcpkg/mp3lame@3.100"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": "./ffmpeg.exe",
+      "SPDXID": "SPDXRef-File-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8c83777bdcd040e09de5f525c05c5679e2967ae9e0f88a7b4ccffc8ca35f832e"
+        }
+      ],
+      "licenseConcluded": "LGPL-3.0-or-later",
+      "licenseInfoInFiles": [
+        "LGPL-3.0-or-later"
+      ],
+      "copyrightText": "NOASSERTION",
+      "fileTypes": [
+        "BINARY"
+      ]
+    },
+    {
+      "fileName": "./avcodec-62.dll",
+      "SPDXID": "SPDXRef-File-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e8995e61efd04c32c889918bea590e554e9699135dabf5f14a900df1afee75a5"
+        }
+      ],
+      "licenseConcluded": "LGPL-3.0-or-later",
+      "licenseInfoInFiles": [
+        "LGPL-3.0-or-later"
+      ],
+      "copyrightText": "NOASSERTION",
+      "fileTypes": [
+        "BINARY"
+      ]
+    },
+    {
+      "fileName": "./avfilter-11.dll",
+      "SPDXID": "SPDXRef-File-3",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ba49903cba7d732d667c30e62cc691eb027e9d9eb88780d0d3d9120980f622f8"
+        }
+      ],
+      "licenseConcluded": "LGPL-3.0-or-later",
+      "licenseInfoInFiles": [
+        "LGPL-3.0-or-later"
+      ],
+      "copyrightText": "NOASSERTION",
+      "fileTypes": [
+        "BINARY"
+      ]
+    },
+    {
+      "fileName": "./avformat-62.dll",
+      "SPDXID": "SPDXRef-File-4",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "98eebb0de3af7df55366c190961e7d44c64fbfdd15d0016e642e5297e36804e9"
+        }
+      ],
+      "licenseConcluded": "LGPL-3.0-or-later",
+      "licenseInfoInFiles": [
+        "LGPL-3.0-or-later"
+      ],
+      "copyrightText": "NOASSERTION",
+      "fileTypes": [
+        "BINARY"
+      ]
+    },
+    {
+      "fileName": "./avutil-60.dll",
+      "SPDXID": "SPDXRef-File-5",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5ca93c70c8ae22a67d780a2cfe0b2d9f8e08283f5511d6ce124cbb6703ff50ba"
+        }
+      ],
+      "licenseConcluded": "LGPL-3.0-or-later",
+      "licenseInfoInFiles": [
+        "LGPL-3.0-or-later"
+      ],
+      "copyrightText": "NOASSERTION",
+      "fileTypes": [
+        "BINARY"
+      ]
+    },
+    {
+      "fileName": "./swresample-6.dll",
+      "SPDXID": "SPDXRef-File-6",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "964b43939b1e3d706d313c0936faec6885b7bc4788937a83e429b8e98ee28991"
+        }
+      ],
+      "licenseConcluded": "LGPL-3.0-or-later",
+      "licenseInfoInFiles": [
+        "LGPL-3.0-or-later"
+      ],
+      "copyrightText": "NOASSERTION",
+      "fileTypes": [
+        "BINARY"
+      ]
+    },
+    {
+      "fileName": "./libmp3lame.dll",
+      "SPDXID": "SPDXRef-File-7",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6766c560292825500babde20e9196ce4e376a176613abd410520fb514084071d"
+        }
+      ],
+      "licenseConcluded": "LGPL-2.0-only",
+      "licenseInfoInFiles": [
+        "LGPL-2.0-only"
+      ],
+      "copyrightText": "NOASSERTION",
+      "fileTypes": [
+        "BINARY"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-FFmpeg"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-FFmpeg",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-LAME"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-FFmpeg",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-FFmpeg",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-FFmpeg",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-3"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-FFmpeg",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-4"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-FFmpeg",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-5"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-FFmpeg",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-6"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-LAME",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-7"
+    }
+  ]
+}

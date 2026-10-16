@@ -1,0 +1,4 @@
+
+> singing-notes-desktop@1.0.0 install:electron
+> node --require ./scripts/build-fetch.cjs node_modules/electron/install.js
+

@@ -1,0 +1,6 @@
+This application bundles a locally built, dynamically linked FFmpeg 8.1.3 runtime.
+It is limited to local WAV / PCM S16LE input and MP3 output through LAME.
+FFmpeg is licensed under LGPL-3.0-or-later; LAME is licensed under LGPL-2.0-only.
+The corresponding source archive, exact overlay recipes, patches, and build notes are named in BUILD_INFO.
+The FFmpeg and LAME DLLs are shipped next to ffmpeg.exe so a recipient can replace them with compatible builds.
+See LICENSE.txt and LAME-LICENSE.txt for the complete license texts.

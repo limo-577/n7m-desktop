@@ -1,0 +1,82 @@
+{
+  "name": "singing-notes-desktop",
+  "version": "1.0.0",
+  "description": "唱歌笔记（歌词标注）+ N7m 播放器 合并桌面版",
+  "main": "main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/security.test.js",
+    "install:electron": "node --require ./scripts/build-fetch.cjs node_modules/electron/install.js",
+    "update:csp": "node scripts/update-csp.js",
+    "prestart": "node scripts/ensure-ffmpeg.js",
+    "start": "electron .",
+    "predist": "node scripts/ensure-ffmpeg.js",
+    "dist": "node --require ./scripts/build-fetch.cjs node_modules/electron-builder/cli.js --win",
+    "postdist": "node scripts/write-installer-checksum.js"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.15.3",
+    "sprintf-js": "file:renderer/vendor",
+    "undici": "7.30.1"
+  },
+  "overrides": {
+    "sprintf-js": "$sprintf-js",
+    "undici@^6.0.0": "6.29.1",
+    "undici@^7.0.0": "$undici"
+  },
+  "build": {
+    "appId": "com.singingnotes.desktop",
+    "productName": "唱歌笔记桌面版",
+    "asar": true,
+    "asarUnpack": [
+      "preload.js"
+    ],
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "!node_modules/html2canvas/**"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/ffmpeg",
+        "to": "ffmpeg",
+        "filter": [
+          "ffmpeg.exe",
+          "*.dll",
+          "LICENSE.txt",
+          "NOTICE.txt",
+          "BUILD_INFO",
+          "CONTROL",
+          "DEPENDENCIES-MINIMAL.txt",
+          "LAME-LICENSE.txt",
+          "vcpkg.spdx.json",
+          "PROVENANCE.md"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "N7m.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  },
+  "dependencies": {
+    "html2canvas-pro": "2.5.2",
+    "jspdf": "4.2.1"
+  }
+}

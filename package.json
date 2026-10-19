@@ -1,6 +1,6 @@
 {
     "name": "singing-notes-desktop",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "唱歌笔记（歌词标注）+ N7m 播放器 合并桌面版",
     "main": "main.js",
     "author": "",
@@ -72,9 +72,9 @@
         "nsis": {
             "oneClick": false,
             "allowToChangeInstallationDirectory": true,
-            "createDesktopShortcut": true,
-            "artifactName": "${productName} Setup ${version}.${ext}"
-        }
+            "createDesktopShortcut": true
+        },
+        "artifactName": "${productName} Setup ${version}.${ext}"
     },
     "dependencies": {
         "html2canvas-pro": "2.5.2",

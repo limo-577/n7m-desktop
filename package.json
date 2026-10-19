@@ -1,6 +1,7 @@
 {
     "name": "singing-notes-desktop",
-    "version": "1.0.6",
+    "version": "1.0.7",
+    "productName": "n7m-desktop",
     "description": "唱歌笔记（歌词标注）+ N7m 播放器 合并桌面版",
     "main": "main.js",
     "author": "",
@@ -29,7 +30,7 @@
     },
     "build": {
         "appId": "com.singingnotes.desktop",
-        "productName": "唱歌笔记桌面版",
+        "productName": "n7m-desktop",
         "asar": true,
         "asarUnpack": [
             "preload.js"
